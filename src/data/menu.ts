@@ -1,0 +1,292 @@
+export interface MenuItem {
+  id: string;
+  name: string;
+  category: "combos" | "burgers" | "sides" | "shakes";
+  price: string;
+  rawPrice: number;
+  description: string;
+  badge?: "Customer Favorite" | "House Specialty" | "Car-Hop Classic" | "Best Seller" | "Staff Pick";
+  calories?: string;
+  details?: string[];
+  popular?: boolean;
+}
+
+export interface MenuCategory {
+  id: "combos" | "burgers" | "sides" | "shakes";
+  label: string;
+  shortLabel: string;
+  iconName: string;
+  description: string;
+}
+
+export const MENU_CATEGORIES: MenuCategory[] = [
+  {
+    id: "combos",
+    label: "Combos & Specials",
+    shortLabel: "Combos",
+    iconName: "Sparkles",
+    description: "Served with golden crinkle-cut fries and your choice of fountain drink or malt shake upgrade.",
+  },
+  {
+    id: "burgers",
+    label: "Burgers & Sandwiches",
+    shortLabel: "Burgers",
+    iconName: "Utensils",
+    description: "100% fresh Midwest Angus beef, smashed paper-thin on our screaming-hot griddle with lace-crisp edges.",
+  },
+  {
+    id: "sides",
+    label: "Sides & Baskets",
+    shortLabel: "Sides",
+    iconName: "Layers",
+    description: "Deep-fried golden to order and served piping hot with house-made dipping sauces.",
+  },
+  {
+    id: "shakes",
+    label: "Shakes & Classic Drinks",
+    shortLabel: "Shakes & Drinks",
+    iconName: "Coffee",
+    description: "Hand-spun with whole milk and real premium dairy ice cream in an authentic vintage malt spindle.",
+  },
+];
+
+export const MENU_ITEMS: MenuItem[] = [
+  // 1. Combos & Specials
+  {
+    id: "combo-double-smash",
+    name: "Double Smash Drive-In Combo",
+    category: "combos",
+    price: "$11.95",
+    rawPrice: 11.95,
+    description: "Our signature Double Smash Cheeseburger served with regular crinkle-cut fries and a 24oz cold fountain soda.",
+    badge: "Best Seller",
+    calories: "980 cal",
+    details: ["Two smashed patties", "American cheese", "Secret Drive-In sauce", "Golden crinkle fries", "Fountain beverage"],
+    popular: true,
+  },
+  {
+    id: "combo-bacon-bbq-meal",
+    name: "Bacon BBQ Stack Meal",
+    category: "combos",
+    price: "$13.45",
+    rawPrice: 13.45,
+    description: "Double patty, thick-cut applewood smoked bacon, crispy onion tanglers, smoky BBQ sauce, crinkle fries, and soda.",
+    badge: "Customer Favorite",
+    calories: "1,140 cal",
+    details: ["Applewood bacon", "Crispy onions", "House tangy BBQ", "Includes fries & drink"],
+    popular: true,
+  },
+  {
+    id: "combo-tender-basket-meal",
+    name: "Car-Hop Classic Tender Meal",
+    category: "combos",
+    price: "$12.25",
+    rawPrice: 12.25,
+    description: "4 hand-breaded buttermilk chicken tenders, seasoned crinkle fries, buttered Texas toast, and 2 scratch dipping sauces.",
+    badge: "House Specialty",
+    calories: "1,020 cal",
+    details: ["Buttermilk soaked", "Buttered Texas toast", "Choice of honey mustard, ranch, or BBQ"],
+    popular: true,
+  },
+  {
+    id: "combo-chili-dog-duo",
+    name: "Route 66 Chili Dog Duo",
+    category: "combos",
+    price: "$10.75",
+    rawPrice: 10.75,
+    description: "Two all-beef natural casing franks smothered in slow-simmered Coney meat chili, melted cheddar, and diced yellow onions with fries.",
+    badge: "Car-Hop Classic",
+    calories: "920 cal",
+    details: ["Natural casing franks", "Secret chili recipe", "Diced onions", "Side of fries"],
+  },
+
+  // 2. Burgers & Sandwiches
+  {
+    id: "burger-double-smash",
+    name: "Miller's Double Smash Cheeseburger",
+    category: "burgers",
+    price: "$7.95",
+    rawPrice: 7.95,
+    description: "Two 1/4 lb smashed Angus patties with lace-crispy edges, double melted American cheese, dill pickles, grilled onions, and Miller's Drive-In secret sauce on a toasted potato roll.",
+    badge: "Best Seller",
+    calories: "680 cal",
+    details: ["Double fresh Angus", "Lace-crisp crust", "House sauce", "Toasted potato bun"],
+    popular: true,
+  },
+  {
+    id: "burger-bacon-bbq",
+    name: "Bacon BBQ Drive-In Burger",
+    category: "burgers",
+    price: "$8.95",
+    rawPrice: 8.95,
+    description: "Two smashed patties layered with aged cheddar, thick applewood bacon, beer-battered onion ring topper, and tangy sweet BBQ glaze.",
+    badge: "Customer Favorite",
+    calories: "820 cal",
+    details: ["Thick-cut bacon", "Aged cheddar", "Crispy onion ring", "Sweet smoky glaze"],
+    popular: true,
+  },
+  {
+    id: "burger-mushroom-swiss",
+    name: "Garlic Butter Mushroom Swiss Melt",
+    category: "burgers",
+    price: "$8.45",
+    rawPrice: 8.45,
+    description: "Two smashed beef patties smothered in butter-sautéed cremini mushrooms, double real Swiss cheese, and roasted garlic herb aioli.",
+    badge: "House Specialty",
+    calories: "740 cal",
+    details: ["Sautéed cremini mushrooms", "Real Swiss cheese", "Garlic herb spread"],
+  },
+  {
+    id: "burger-crispy-chicken",
+    name: "Crispy Buttermilk Chicken Deluxe",
+    category: "burgers",
+    price: "$7.85",
+    rawPrice: 7.85,
+    description: "Fresh chicken breast marinated 24 hrs in buttermilk, double-dredged for max crunch, dill pickle chips, shredded lettuce, and creamy pepper sauce.",
+    badge: "Staff Pick",
+    calories: "610 cal",
+    details: ["24-hr buttermilk marinade", "Double-dredged crunch", "Creamy pepper sauce"],
+    popular: true,
+  },
+  {
+    id: "burger-classic-chili-dog",
+    name: "Classic Coney Island Chili Dog",
+    category: "burgers",
+    price: "$4.95",
+    rawPrice: 4.95,
+    description: "Grilled quarter-pound all-beef frank topped with slow-simmered hearty drive-in chili, shredded cheddar, and spicy brown mustard.",
+    badge: "Car-Hop Classic",
+    calories: "450 cal",
+    details: ["Quarter-pound frank", "Homemade chili", "Sharp cheddar"],
+  },
+
+  // 3. Sides & Baskets
+  {
+    id: "side-cheese-fries",
+    name: "Crinkle-Cut Cheese Fries",
+    category: "sides",
+    price: "$4.95",
+    rawPrice: 4.95,
+    description: "Generous basket of crisp golden crinkle fries smothered in warm velvety aged cheddar cheese sauce and dusted with house seasoning.",
+    badge: "Customer Favorite",
+    calories: "520 cal",
+    details: ["Classic crinkle cut", "Warm cheddar drizzle", "Secret spice blend"],
+    popular: true,
+  },
+  {
+    id: "side-onion-ring-stack",
+    name: "Golden Onion Ring Stack",
+    category: "sides",
+    price: "$5.45",
+    rawPrice: 5.45,
+    description: "Colossal thick-cut sweet Spanish onions dipped in our signature beer-batter, fried dark golden and served with smoky horseradish dip.",
+    badge: "House Specialty",
+    calories: "480 cal",
+    details: ["Sweet Spanish onions", "Thick beer batter", "Smoky horseradish dip"],
+    popular: true,
+  },
+  {
+    id: "side-tender-basket",
+    name: "Crispy Tender Basket",
+    category: "sides",
+    price: "$8.25",
+    rawPrice: 8.25,
+    description: "Four jumbo hand-breaded chicken tenders served with a portion of crinkle fries, dill pickle spears, and two scratch-made dipping sauces.",
+    badge: "Best Seller",
+    calories: "780 cal",
+    details: ["4 jumbo tenders", "Hand-breaded to order", "Crispy fries & sauce"],
+    popular: true,
+  },
+  {
+    id: "side-loaded-tots",
+    name: "Loaded Chili Cheese Tots",
+    category: "sides",
+    price: "$5.85",
+    rawPrice: 5.85,
+    description: "Golden crispy tater tots smothered with our secret-recipe beef chili, melted cheddar, crisp bacon bits, pickled jalapeños, and sour cream.",
+    badge: "Car-Hop Classic",
+    calories: "660 cal",
+    details: ["Crispy potato tots", "Homemade beef chili", "Real bacon bits & jalapeños"],
+  },
+  {
+    id: "side-fried-pickles",
+    name: "Cornmeal Fried Pickle Chips",
+    category: "sides",
+    price: "$4.75",
+    rawPrice: 4.75,
+    description: "Tangy crinkle-cut dill pickle chips coated in seasoned cornmeal batter, flash-fried extra crispy and served with house buttermilk ranch.",
+    badge: "Staff Pick",
+    calories: "380 cal",
+    details: ["Crinkle dill chips", "Crispy cornmeal crust", "House ranch dip"],
+  },
+
+  // 4. Shakes & Classic Drinks
+  {
+    id: "shake-peanut-butter-malt",
+    name: "Peanut Butter Fudge Malt",
+    category: "shakes",
+    price: "$5.95",
+    rawPrice: 5.95,
+    description: "Hand-spun rich vanilla ice cream blended with thick creamy peanut butter, Dutch chocolate fudge swirl, and malted barley powder.",
+    badge: "Best Seller",
+    calories: "760 cal",
+    details: ["Real vanilla bean cream", "Creamy peanut butter", "Dutch fudge swirl", "Real malt"],
+    popular: true,
+  },
+  {
+    id: "shake-chocolate-malt",
+    name: "Classic Chocolate Malt Shake",
+    category: "shakes",
+    price: "$5.45",
+    rawPrice: 5.45,
+    description: "Spun thick in our classic vintage Hamilton Beach spindle. Rich chocolate cream, malt powder, crowned with whipped cream & maraschino cherry.",
+    badge: "Car-Hop Classic",
+    calories: "690 cal",
+    details: ["Hand-spun", "Vintage malt spindle", "Whipped cream & cherry"],
+    popular: true,
+  },
+  {
+    id: "shake-fresh-strawberry",
+    name: "Fresh Strawberry Cream Shake",
+    category: "shakes",
+    price: "$5.45",
+    rawPrice: 5.45,
+    description: "Whole milk ice cream whipped with sweetened macerated ripe strawberries, vanilla bean extract, and fluffy whipped topping.",
+    badge: "Customer Favorite",
+    calories: "620 cal",
+    details: ["Real macerated strawberries", "Fresh cream", "Topped with cherry"],
+  },
+  {
+    id: "shake-salted-butterscotch",
+    name: "Warm Salted Butterscotch Malt",
+    category: "shakes",
+    price: "$5.95",
+    rawPrice: 5.95,
+    description: "Old-fashioned butterscotch syrup blended with vanilla ice cream, a dash of flaky sea salt, and malted milk.",
+    badge: "House Specialty",
+    calories: "710 cal",
+    details: ["Old-fashioned butterscotch", "Flaky sea salt", "Malt powder"],
+  },
+  {
+    id: "drink-root-beer-float",
+    name: "Frosty Mug Root Beer Float",
+    category: "shakes",
+    price: "$4.65",
+    rawPrice: 4.65,
+    description: "Classic 1950s style float: craft draft root beer bubbling over two huge scoops of premium frozen vanilla custard.",
+    badge: "Car-Hop Classic",
+    calories: "380 cal",
+    details: ["Craft draft root beer", "Two vanilla custard scoops", "Foamy head"],
+  },
+  {
+    id: "drink-cherry-limeade",
+    name: "Route 66 Cherry Limeade",
+    category: "shakes",
+    price: "$3.45",
+    rawPrice: 3.45,
+    description: "Fresh tart Persian lime juice squeezed over crushed pebble ice, sweetened with wild cherry syrup and sparkling soda.",
+    badge: "Staff Pick",
+    calories: "190 cal",
+    details: ["Fresh squeezed lime", "Tart cherry syrup", "Crushed sonic ice"],
+  },
+];
