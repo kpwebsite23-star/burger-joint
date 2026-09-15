@@ -46,6 +46,43 @@ export const viewport: Viewport = {
   maximumScale: 5,
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FastFoodRestaurant",
+  name: "Miller's Five Drive-In",
+  telephone: "(555) 348-3483",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "505 Route 66 Parkway",
+    addressLocality: "Lincoln",
+    addressRegion: "IL",
+    postalCode: "62656",
+    addressCountry: "US",
+  },
+  servesCuisine: ["American", "Burgers", "Drive-In Diner", "Ice Cream", "Shakes"],
+  priceRange: "$",
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday"],
+      opens: "11:00",
+      closes: "21:00",
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Friday", "Saturday"],
+      opens: "11:00",
+      closes: "22:00",
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: "Sunday",
+      opens: "12:00",
+      closes: "20:30",
+    },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -53,6 +90,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} scroll-smooth`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="min-h-screen flex flex-col bg-[#FAFAF9] text-stone-900 antialiased selection:bg-[#DC2626] selection:text-white">
         <AnnouncementBar />
         <Navbar />

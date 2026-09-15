@@ -1,11 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Clock, MapPin, Navigation, Car, Phone, Lightbulb, Compass, ExternalLink } from "lucide-react";
+import { Clock, MapPin, Navigation, Car, Phone, Lightbulb, Compass, ExternalLink, Sparkles, CheckCircle2 } from "lucide-react";
 import { DINER_INFO, getDinerStatus } from "@/data/dinerInfo";
 
 export default function LocationHoursSection() {
   const [currentDayIndex, setCurrentDayIndex] = useState<number>(1);
+  const [selectedStall, setSelectedStall] = useState<number | null>(7); // default preview stall
+  const [headlightsOn, setHeadlightsOn] = useState<boolean>(true);
   const [status, setStatus] = useState({
     isOpen: true,
     statusText: "Open Today until 9:00 PM",
@@ -19,6 +21,11 @@ export default function LocationHoursSection() {
       statusText: dinerStat.statusText,
     });
   }, []);
+
+  const handleSelectStall = (stallNum: number) => {
+    setSelectedStall(stallNum);
+    setHeadlightsOn(true);
+  };
 
   return (
     <section id="location" className="py-16 sm:py-20 lg:py-24 bg-stone-100/70 border-b border-stone-200 scroll-mt-24">
@@ -39,7 +46,7 @@ export default function LocationHoursSection() {
         </div>
 
         {/* Two-Column Responsive Card Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-12">
           
           {/* Column 1: Weekly Hours Grid & Car-Hop Instructions */}
           <div className="lg:col-span-6 bg-white rounded-3xl border-2 border-stone-200 p-6 sm:p-8 shadow-sm flex flex-col justify-between">
@@ -242,6 +249,74 @@ export default function LocationHoursSection() {
 
           </div>
 
+        </div>
+
+        {/* Interactive 16 Car-Hop Stall Guide & Headlight Simulator */}
+        <div className="bg-white rounded-3xl border-3 border-stone-900 p-6 sm:p-8 shadow-[6px_6px_0px_0px_#1C1917]">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-stone-200 mb-6">
+            <div>
+              <div className="inline-flex items-center gap-1.5 text-xs font-black uppercase text-[#B45309] bg-amber-100 px-3 py-1 rounded-full mb-1">
+                <Sparkles className="w-3.5 h-3.5" />
+                Interactive Stall Map
+              </div>
+              <h3 className="text-2xl font-black font-serif text-stone-950">
+                16 Covered Car-Hop Stalls
+              </h3>
+              <p className="text-xs sm:text-sm text-stone-600 mt-0.5">
+                Pull into any open stall. Tap below to simulate headlight car-hop service!
+              </p>
+            </div>
+
+            {selectedStall && (
+              <div className="flex items-center gap-3 bg-stone-900 text-white px-4 py-2.5 rounded-2xl">
+                <div className={`w-3 h-3 rounded-full ${headlightsOn ? "bg-amber-400 shadow-[0_0_8px_#F59E0B] animate-pulse" : "bg-stone-500"}`} />
+                <div className="text-xs sm:text-sm">
+                  <span className="font-mono font-bold text-amber-400">Stall #{selectedStall}</span>
+                  <span className="text-stone-300 ml-1.5">• Headlights ON</span>
+                </div>
+                <a
+                  href={DINER_INFO.phoneTel}
+                  className="tap-target ml-2 px-3 py-1 bg-[#DC2626] text-white font-bold text-xs rounded-lg"
+                >
+                  Order to Stall #{selectedStall}
+                </a>
+              </div>
+            )}
+          </div>
+
+          {/* 16 Stall Buttons Grid */}
+          <div className="grid grid-cols-4 sm:grid-cols-8 gap-2.5 sm:gap-3 mb-6">
+            {Array.from({ length: 16 }, (_, i) => i + 1).map((stallNum) => {
+              const isSelected = selectedStall === stallNum;
+              return (
+                <button
+                  key={stallNum}
+                  type="button"
+                  onClick={() => handleSelectStall(stallNum)}
+                  className={`tap-target py-3 px-2 rounded-xl font-mono text-center flex flex-col items-center justify-center transition-all border-2 cursor-pointer ${
+                    isSelected
+                      ? "bg-[#1C1917] text-amber-400 border-amber-400 shadow-md scale-105"
+                      : "bg-stone-50 hover:bg-stone-100 text-stone-800 border-stone-200"
+                  }`}
+                >
+                  <Car className={`w-4 h-4 mb-1 ${isSelected ? "text-amber-400 animate-bounce" : "text-stone-400"}`} />
+                  <span className="text-xs font-black">Stall {stallNum}</span>
+                </button>
+              );
+            })}
+          </div>
+
+          <div className="p-3.5 bg-amber-50/80 border border-amber-300 rounded-xl flex items-center justify-between text-xs sm:text-sm text-stone-800">
+            <div className="flex items-center gap-2">
+              <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+              <span>
+                All 16 stalls feature car-window tray service, call-ahead express pickup, and weather canopies.
+              </span>
+            </div>
+            <span className="font-bold text-stone-900 hidden sm:inline">
+              Est. 1958 Route 66
+            </span>
+          </div>
         </div>
 
       </div>
