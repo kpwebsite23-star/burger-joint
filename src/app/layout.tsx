@@ -1,8 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import AnnouncementBar from "@/components/AnnouncementBar";
-import Navbar from "@/components/Navbar";
+import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { TrayProvider } from "@/context/TrayContext";
 
@@ -99,8 +98,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-screen flex flex-col bg-[#FAFAF9] text-stone-900 antialiased selection:bg-[#DC2626] selection:text-white">
         <TrayProvider>
-          <AnnouncementBar />
-          <Navbar />
+          <Header />
           <div className="flex-1">{children}</div>
           <Footer />
         </TrayProvider>
