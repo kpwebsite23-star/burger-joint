@@ -6,6 +6,7 @@ import FaqSection from "@/components/FaqSection";
 import VipClubSection from "@/components/VipClubSection";
 import StickyMobileOrderBar from "@/components/StickyMobileOrderBar";
 import CarHopTray from "@/components/CarHopTray";
+import RetroJukebox from "@/components/RetroJukebox";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <VipClubSection />
       <StickyMobileOrderBar />
       <CarHopTray />
+      <RetroJukebox />
     </main>
   );
 }
