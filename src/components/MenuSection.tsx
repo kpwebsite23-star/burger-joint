@@ -1,16 +1,18 @@
 "use client";
 
 import { useState } from "react";
-import { Sparkles, Utensils, Layers, Coffee, Phone, Search, Star, Flame, Check, X, Plus, Info } from "lucide-react";
+import { Sparkles, Utensils, Layers, Coffee, Phone, Search, Star, Flame, Check, X, Plus, ShoppingBag } from "lucide-react";
 import { MENU_CATEGORIES, MENU_ITEMS, MenuItem } from "@/data/menu";
 import { DINER_INFO } from "@/data/dinerInfo";
+import { useTray } from "@/context/TrayContext";
+import SecretMenuModal from "./SecretMenuModal";
 
 export default function MenuSection() {
   const [activeCategory, setActiveCategory] = useState<"combos" | "burgers" | "sides" | "shakes">("combos");
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedItemForCustomizing, setSelectedItemForCustomizing] = useState<MenuItem | null>(null);
   const [extraAddons, setExtraAddons] = useState<string[]>([]);
-  const [stallNumber, setStallNumber] = useState("Stall #7");
+  const { addItem, setSelectedStall } = useTray();
 
   const getCategoryIcon = (id: string) => {
     switch (id) {
@@ -65,6 +67,12 @@ export default function MenuSection() {
   const closeCustomizer = () => {
     setSelectedItemForCustomizing(null);
     setExtraAddons([]);
+  };
+
+  const handleAddCustomToTray = () => {
+    if (!selectedItemForCustomizing) return;
+    addItem(selectedItemForCustomizing, extraAddons);
+    closeCustomizer();
   };
 
   return (
@@ -227,13 +235,23 @@ export default function MenuSection() {
                     <span>Customize</span>
                   </button>
 
+                  <button
+                    type="button"
+                    onClick={() => addItem(item)}
+                    aria-label={`Add ${item.name} to Tray`}
+                    className="tap-target px-3.5 py-2 bg-amber-500 hover:bg-amber-600 text-stone-950 rounded-xl font-black text-xs flex items-center gap-1.5 shadow-sm active:scale-95 cursor-pointer"
+                  >
+                    <ShoppingBag className="w-3.5 h-3.5" />
+                    <span>Add to Tray</span>
+                  </button>
+
                   <a
                     href={DINER_INFO.phoneTel}
                     aria-label={`Order ${item.name}`}
-                    className="tap-target px-4 py-2 bg-stone-100 hover:bg-[#DC2626] text-stone-800 hover:text-white rounded-xl font-black text-xs sm:text-sm flex items-center gap-2 transition-all group/btn"
+                    className="tap-target px-3.5 py-2 bg-stone-100 hover:bg-[#DC2626] text-stone-800 hover:text-white rounded-xl font-black text-xs flex items-center gap-1.5 transition-all group/btn"
                   >
                     <Phone className="w-3.5 h-3.5 group-hover/btn:animate-bounce" />
-                    <span>Call to Order</span>
+                    <span>Call</span>
                   </a>
                 </div>
               </div>
@@ -256,6 +274,9 @@ export default function MenuSection() {
             </button>
           </div>
         )}
+
+        {/* VIP Secret Menu Toggle Button */}
+        <SecretMenuModal />
 
         {/* Bottom Menu Order Prompt Box */}
         <div className="mt-12 bg-[#1C1917] rounded-3xl p-6 sm:p-8 text-stone-100 flex flex-col md:flex-row items-center justify-between gap-6 border-2 border-stone-800 shadow-lg">
@@ -371,27 +392,10 @@ export default function MenuSection() {
                   <span className="text-xs font-mono font-bold text-[#DC2626]">+$1.25</span>
                 </label>
               </div>
-
-              {/* Stall selection */}
-              <div className="pt-2">
-                <label className="block text-xs font-bold text-stone-600 mb-1">
-                  Deliver to Stall / Window:
-                </label>
-                <select
-                  value={stallNumber}
-                  onChange={(e) => setStallNumber(e.target.value)}
-                  className="w-full px-3 py-2 bg-stone-50 border border-stone-300 rounded-xl text-sm font-bold text-stone-900"
-                >
-                  <option value="Call-Ahead Carryout Window">Call-Ahead Carryout Window</option>
-                  {Array.from({ length: 16 }, (_, i) => `Car-Hop Stall #${i + 1}`).map((s) => (
-                    <option key={s} value={s}>{s}</option>
-                  ))}
-                </select>
-              </div>
             </div>
 
-            {/* Estimated Total & Call Button */}
-            <div className="pt-4 border-t border-stone-200 flex items-center justify-between gap-4">
+            {/* Estimated Total, Add to Tray & Call Button */}
+            <div className="pt-4 border-t border-stone-200 flex flex-col sm:flex-row items-center justify-between gap-4">
               <div>
                 <div className="text-xs text-stone-500 font-bold uppercase">Estimated Total</div>
                 <div className="text-2xl font-black font-mono text-[#DC2626]">
@@ -399,13 +403,24 @@ export default function MenuSection() {
                 </div>
               </div>
 
-              <a
-                href={DINER_INFO.phoneTel}
-                className="tap-target px-5 py-3 bg-[#DC2626] hover:bg-[#B91C1C] text-white font-black text-sm rounded-xl flex items-center gap-2 shadow-md active:scale-95"
-              >
-                <Phone className="w-4 h-4" />
-                <span>Call In Order ({DINER_INFO.phoneDisplay})</span>
-              </a>
+              <div className="flex items-center gap-2 w-full sm:w-auto">
+                <button
+                  type="button"
+                  onClick={handleAddCustomToTray}
+                  className="tap-target flex-1 sm:flex-none px-4 py-3 bg-amber-500 hover:bg-amber-600 text-stone-950 font-black text-xs sm:text-sm rounded-xl flex items-center justify-center gap-1.5 shadow-md active:scale-95 cursor-pointer"
+                >
+                  <ShoppingBag className="w-4 h-4" />
+                  <span>Add to Tray</span>
+                </button>
+
+                <a
+                  href={DINER_INFO.phoneTel}
+                  className="tap-target flex-1 sm:flex-none px-4 py-3 bg-[#DC2626] hover:bg-[#B91C1C] text-white font-black text-xs sm:text-sm rounded-xl flex items-center justify-center gap-1.5 shadow-md active:scale-95"
+                >
+                  <Phone className="w-4 h-4" />
+                  <span>Call In</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>

@@ -1,9 +1,32 @@
 "use client";
 
-import { Star, Heart, Award, ShieldCheck, Quote } from "lucide-react";
-import { DINER_INFO } from "@/data/dinerInfo";
+import { useState } from "react";
+import { Star, Heart, Award, ShieldCheck, Quote, ThumbsUp } from "lucide-react";
+import { DINER_INFO, Testimonial } from "@/data/dinerInfo";
+import ReviewModal from "./ReviewModal";
 
 export default function AboutStorySection() {
+  const [testimonialsList, setTestimonialsList] = useState<Testimonial[]>(DINER_INFO.testimonials);
+
+  const handleAddReview = (newReview: {
+    author: string;
+    location: string;
+    rating: number;
+    quote: string;
+    favoriteItem: string;
+  }) => {
+    const item: Testimonial = {
+      id: `${Date.now()}`,
+      author: newReview.author,
+      location: newReview.location,
+      rating: newReview.rating,
+      quote: newReview.quote,
+      favoriteItem: newReview.favoriteItem,
+      date: "Verified Customer • Just now",
+    };
+    setTestimonialsList([item, ...testimonialsList]);
+  };
+
   return (
     <section id="about" className="py-16 sm:py-20 lg:py-24 bg-[#FAFAF9] border-b border-stone-200 scroll-mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -90,24 +113,28 @@ export default function AboutStorySection() {
 
         </div>
 
-        {/* Social Proof: 3 Authentic Testimonials Section */}
+        {/* Social Proof: Authentic Testimonials Section */}
         <div className="pt-12 border-t-2 border-stone-200/80">
-          <div className="text-center max-w-2xl mx-auto mb-10">
-            <div className="flex items-center justify-center gap-1 text-[#F59E0B] mb-2">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-5 h-5 fill-current" />
-              ))}
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
+            <div>
+              <div className="flex items-center gap-1 text-[#F59E0B] mb-2">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-5 h-5 fill-current" />
+                ))}
+              </div>
+              <h3 className="text-2xl sm:text-3xl font-black font-serif text-stone-950">
+                Loved by Locals &amp; Highway Travelers Alike
+              </h3>
+              <p className="text-stone-600 text-sm sm:text-base mt-1">
+                Over 2,400 verified reviews from drivers who know real smashed quality.
+              </p>
             </div>
-            <h3 className="text-2xl sm:text-3xl font-black font-serif text-stone-950">
-              Loved by Locals &amp; Highway Travelers Alike
-            </h3>
-            <p className="text-stone-600 text-sm sm:text-base mt-2">
-              Over 2,400 five-star reviews from hungry drivers who know real quality when they taste it.
-            </p>
+
+            <ReviewModal onAddReview={handleAddReview} />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {DINER_INFO.testimonials.map((test) => (
+            {testimonialsList.map((test) => (
               <div
                 key={test.id}
                 className="bg-white rounded-3xl border-2 border-stone-200 p-6 sm:p-7 shadow-xs hover:shadow-md transition-shadow flex flex-col justify-between"

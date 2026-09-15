@@ -4,6 +4,7 @@ import "./globals.css";
 import AnnouncementBar from "@/components/AnnouncementBar";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { TrayProvider } from "@/context/TrayContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -97,10 +98,12 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen flex flex-col bg-[#FAFAF9] text-stone-900 antialiased selection:bg-[#DC2626] selection:text-white">
-        <AnnouncementBar />
-        <Navbar />
-        <div className="flex-1">{children}</div>
-        <Footer />
+        <TrayProvider>
+          <AnnouncementBar />
+          <Navbar />
+          <div className="flex-1">{children}</div>
+          <Footer />
+        </TrayProvider>
       </body>
     </html>
   );

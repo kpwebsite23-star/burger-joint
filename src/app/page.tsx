@@ -2,8 +2,10 @@ import HeroSection from "@/components/HeroSection";
 import MenuSection from "@/components/MenuSection";
 import LocationHoursSection from "@/components/LocationHoursSection";
 import AboutStorySection from "@/components/AboutStorySection";
+import FaqSection from "@/components/FaqSection";
 import VipClubSection from "@/components/VipClubSection";
 import StickyMobileOrderBar from "@/components/StickyMobileOrderBar";
+import CarHopTray from "@/components/CarHopTray";
 
 export default function Home() {
   return (
@@ -12,8 +14,10 @@ export default function Home() {
       <MenuSection />
       <LocationHoursSection />
       <AboutStorySection />
+      <FaqSection />
       <VipClubSection />
       <StickyMobileOrderBar />
+      <CarHopTray />
     </main>
   );
 }
