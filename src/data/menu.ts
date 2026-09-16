@@ -90,7 +90,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: "combo-chili-dog-duo",
-    name: "Route 66 Chili Dog Duo",
+    name: "State Street Chili Dog Duo",
     category: "combos",
     price: "$10.75",
     rawPrice: 10.75,
@@ -280,7 +280,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: "drink-cherry-limeade",
-    name: "Route 66 Cherry Limeade",
+    name: "Drive-In Cherry Limeade",
     category: "shakes",
     price: "$3.45",
     rawPrice: 3.45,

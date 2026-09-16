@@ -126,7 +126,7 @@ export default function ReviewModal({ onAddReview }: ReviewModalProps) {
                     type="text"
                     value={location}
                     onChange={(e) => setLocation(e.target.value)}
-                    placeholder="e.g. Lincoln Local or Route 66 Traveler"
+                    placeholder="e.g. Augusta Local or Kansas Neighbor"
                     className="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-300 rounded-xl text-sm font-semibold text-stone-900 outline-none focus:border-[#DC2626]"
                   />
                 </div>

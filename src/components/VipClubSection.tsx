@@ -51,11 +51,11 @@ export default function VipClubSection() {
                 <div className="text-center max-w-2xl mx-auto mb-8">
                   <div className="inline-flex items-center gap-2 bg-amber-200 text-[#78350F] border-2 border-stone-900 px-4 py-1.5 rounded-full text-xs sm:text-sm font-black uppercase tracking-widest mb-4 shadow-[2px_2px_0px_0px_#1C1917]">
                     <Ticket className="w-4 h-4 text-[#DC2626]" />
-                    ★ Route 66 Cruisers Club ★
+                    ★ Miller&apos;s VIP Cruisers Club ★
                   </div>
                   
                   <h2 className="text-3xl sm:text-5xl font-black font-serif tracking-tight text-stone-950 mb-3">
-                    Join the Miller&apos;s Five VIP Club
+                    Join the Miller&apos;s VIP Club
                   </h2>
 
                   <p className="text-stone-700 font-bold text-base sm:text-lg leading-relaxed">
@@ -121,7 +121,7 @@ export default function VipClubSection() {
                     <div className="text-xs text-stone-600 font-bold mt-1">Spun with real whole milk</div>
                   </div>
                   <div className="p-4 bg-white rounded-2xl border-2 border-stone-900 shadow-[3px_3px_0px_0px_#1C1917]">
-                    <div className="font-black text-stone-950 text-sm uppercase">🔒 Secret 1958 Stacks</div>
+                    <div className="font-black text-stone-950 text-sm uppercase">🔒 Secret Off-Menu Stacks</div>
                     <div className="text-xs text-stone-600 font-bold mt-1">Quadruple smash &amp; floats</div>
                   </div>
                   <div className="p-4 bg-white rounded-2xl border-2 border-stone-900 shadow-[3px_3px_0px_0px_#1C1917]">
@@ -137,7 +137,7 @@ export default function VipClubSection() {
                 </div>
                 
                 <h3 className="text-2xl sm:text-4xl font-black font-serif text-stone-950 mb-2">
-                  Welcome to the 1958 Cruisers Club!
+                  Welcome to the Miller&apos;s VIP Club!
                 </h3>
                 
                 <p className="text-stone-700 font-bold text-base max-w-md mx-auto mb-6">
@@ -148,10 +148,10 @@ export default function VipClubSection() {
                 <div className="max-w-sm mx-auto bg-amber-100 border-3 border-dashed border-stone-900 rounded-2xl p-5 shadow-[4px_4px_0px_0px_#1C1917] mb-6">
                   <div className="flex items-center justify-center gap-2 text-xs font-black uppercase text-[#92400E] mb-1">
                     <Sparkles className="w-4 h-4" />
-                    ★ 1958 VINTAGE VOUCHER ★
+                    ★ 1956 VINTAGE VOUCHER ★
                   </div>
                   <div className="text-2xl sm:text-3xl font-black font-mono text-[#DC2626] tracking-widest my-2">
-                    FREE-SHAKE-1958
+                    FREE-SHAKE-1956
                   </div>
                   <p className="text-xs text-stone-700 font-bold">
                     Free regular hand-spun malt shake with any burger combo order. Valid for 30 days!

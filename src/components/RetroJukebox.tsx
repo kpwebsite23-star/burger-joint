@@ -13,10 +13,10 @@ interface JukeboxTrack {
 
 const TRACKS: JukeboxTrack[] = [
   { id: "1", title: "Rock Around the Clock", artist: "Bill Haley & His Comets", year: "1954", duration: "2:10" },
-  { id: "2", title: "Johnny B. Goode", artist: "Chuck Berry", year: "1958", duration: "2:41" },
-  { id: "3", title: "Route 66 Theme", artist: "Nelson Riddle Orchestra", year: "1958", duration: "2:08" },
-  { id: "4", title: "Lollipop", artist: "The Chordettes", year: "1958", duration: "2:09" },
-  { id: "5", title: "Drive-In Diner Chatter & Sizzle", artist: "Authentic 1958 Flat-Top Sound", year: "1958", duration: "Loop" },
+  { id: "2", title: "Hound Dog", artist: "Elvis Presley", year: "1956", duration: "2:16" },
+  { id: "3", title: "Blueberry Hill", artist: "Fats Domino", year: "1956", duration: "2:20" },
+  { id: "4", title: "Johnny B. Goode", artist: "Chuck Berry", year: "1958", duration: "2:41" },
+  { id: "5", title: "Drive-In Diner Chatter & Sizzle", artist: "Authentic Flat-Top Sizzle", year: "1956", duration: "Loop" },
 ];
 
 export default function RetroJukebox() {
@@ -37,34 +37,28 @@ export default function RetroJukebox() {
 
   return (
     <>
-      {/* Floating 1950s Table Jukebox Mini-Widget Button */}
-      <div className="fixed bottom-24 left-4 sm:bottom-6 sm:left-6 z-40">
+      {/* Floating 1950s Compact 48px Vinyl Record Button */}
+      <div className="fixed bottom-20 left-4 sm:bottom-6 sm:left-6 z-40">
         <button
           type="button"
           onClick={() => setIsOpen(!isOpen)}
+          title={isPlaying ? `Now Playing: ${currentTrack.title} • Click to open Jukebox` : "Open 1950s Diner Jukebox"}
           aria-label="Open 1950s Diner Jukebox"
-          className={`tap-target px-4 py-2.5 rounded-2xl border-3 border-amber-400 bg-[#1C1917] text-white shadow-[4px_4px_0px_0px_#DC2626] hover:shadow-[2px_2px_0px_0px_#DC2626] transition-all flex items-center gap-3 cursor-pointer group ${
-            isPlaying ? "neon-box-amber ring-2 ring-red-500" : ""
+          className={`tap-target w-12 h-12 sm:w-13 sm:h-13 rounded-full border-2 border-amber-400 bg-[#1C1917] text-white shadow-[3px_3px_0px_0px_#DC2626] hover:shadow-[1px_1px_0px_0px_#DC2626] hover:scale-105 active:scale-95 transition-all flex items-center justify-center cursor-pointer group relative ${
+            isPlaying ? "ring-2 ring-red-500 animate-pulse" : ""
           }`}
         >
-          <div className="relative">
+          <div className="relative flex items-center justify-center">
             <Disc3
-              className={`w-6 h-6 text-amber-400 ${isPlaying ? "animate-spin-vinyl text-red-400" : "group-hover:rotate-45 transition-transform"}`}
+              className={`w-6 h-6 sm:w-7 sm:h-7 text-amber-400 ${isPlaying ? "animate-spin-vinyl text-red-400" : "group-hover:rotate-45 transition-transform"}`}
             />
             {isPlaying && (
               <span className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping" />
             )}
           </div>
 
-          <div className="text-left hidden sm:block">
-            <div className="text-[10px] font-black uppercase tracking-widest text-[#F59E0B] flex items-center gap-1">
-              <Sparkles className="w-3 h-3" />
-              1950s Table Jukebox
-            </div>
-            <div className="text-xs font-bold text-stone-200 truncate max-w-[140px]">
-              {isPlaying ? currentTrack.title : "Drop a Dime • Play 50s Hits"}
-            </div>
-          </div>
+          {/* Mini 1950s Jukebox label hint on hover */}
+          <span className="sr-only">1950s Table Jukebox</span>
         </button>
       </div>
 
@@ -79,7 +73,7 @@ export default function RetroJukebox() {
             <div className="flex items-start justify-between pb-4 border-b-2 border-amber-400/40 mb-4 mt-2">
               <div>
                 <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase tracking-widest bg-amber-400/20 text-amber-300 border border-amber-400/40 mb-1">
-                  ★ WURLITZER 1958 SELECT-O-MATIC ★
+                  ★ WURLITZER 1956 SELECT-O-MATIC ★
                 </div>
                 <h3 className="text-2xl font-black font-serif text-white neon-glow-amber">
                   Diner Jukebox

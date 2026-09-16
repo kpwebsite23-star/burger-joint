@@ -48,15 +48,15 @@ export default function AnnouncementBar() {
               </span>
             </div>
 
-            {/* 1950s Route 66 Mini Stamp */}
+            {/* 1950s Augusta Mini Stamp */}
             <span className="text-[11px] font-black uppercase text-[#F59E0B] bg-stone-900 px-2.5 py-0.5 rounded-full border border-amber-400/40 whitespace-nowrap hidden sm:inline-flex items-center gap-1">
               <Sparkles className="w-3 h-3 text-amber-400" />
-              Route 66 Drive-In • Est. 1958
+              State St Drive-In • Est. 1956
             </span>
 
-            {/* Mobile Car-Hop Mini Tag */}
+            {/* Mobile Mini Tag */}
             <span className="sm:hidden text-[11px] font-bold text-stone-300 bg-stone-800 px-2.5 py-1 rounded-full border border-stone-700 whitespace-nowrap">
-              16 Stalls Open
+              Carryout &amp; Dining
             </span>
           </div>
 
@@ -68,7 +68,7 @@ export default function AnnouncementBar() {
               className="tap-target w-full sm:w-auto bg-[#DC2626] hover:bg-[#B91C1C] text-white px-4 py-1.5 rounded-lg font-black text-xs sm:text-sm flex items-center justify-center gap-2 transition-all active:scale-98 shadow-sm border border-red-400/50 whitespace-nowrap"
             >
               <Phone className="w-4 h-4 animate-bounce shrink-0 text-amber-300" />
-              <span>Car-Hop &amp; Call-Ahead:</span>
+              <span>Call-Ahead Carryout:</span>
               <span className="underline decoration-amber-400 decoration-2 underline-offset-2 tracking-wider font-mono font-black text-amber-200">
                 {DINER_INFO.phoneDisplay}
               </span>

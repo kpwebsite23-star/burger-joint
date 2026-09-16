@@ -35,13 +35,13 @@ export default function LocationHoursSection() {
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
           <div className="inline-flex items-center gap-2 bg-amber-200 text-[#78350F] px-4 py-1.5 rounded-full text-xs sm:text-sm font-black uppercase tracking-widest mb-3 border-2 border-stone-900 shadow-[3px_3px_0px_0px_#1C1917]">
             <Car className="w-4 h-4" />
-            ★ 16 Covered Car-Hop Stalls Since 1958 ★
+            ★ Augusta Drive-In Tradition Since 1956 ★
           </div>
           <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black font-serif tracking-tight text-stone-950">
-            Hours, Location &amp; Car-Hop Stalls
+            Hours, Location &amp; Drive-In Dining
           </h2>
           <p className="mt-3 text-stone-800 font-medium text-base sm:text-lg">
-            Located right on historic Route 66 Parkway. Pull into a covered stall, flick on your headlights, and our friendly car-hop will attach a tray right to your window!
+            Located right at 330 State Street in Augusta, Kansas. Pull up for quick counter carryout or enjoy your meal at our outdoor picnic benches under the Kansas sky!
           </p>
         </div>
 
@@ -60,7 +60,7 @@ export default function LocationHoursSection() {
                     <h3 className="text-2xl font-black text-stone-950 font-serif">
                       Diner Operating Hours
                     </h3>
-                    <p className="text-xs text-stone-600 font-bold uppercase">Route 66 Drive-In Schedule</p>
+                    <p className="text-xs text-stone-600 font-bold uppercase">Augusta Drive-In Schedule</p>
                   </div>
                 </div>
 
@@ -108,7 +108,7 @@ export default function LocationHoursSection() {
               </div>
             </div>
 
-            {/* 1950s Car-Hop Ordering Speaker Box Graphic */}
+            {/* 1950s Drive-In Ordering Box Graphic */}
             <div className="bg-[#1C1917] text-white rounded-2xl p-5 border-3 border-amber-400 shadow-[4px_4px_0px_0px_#DC2626]">
               <div className="flex items-start gap-3.5">
                 <div className="p-2.5 bg-amber-400 text-stone-950 rounded-xl shrink-0 mt-0.5 border border-stone-900">
@@ -116,19 +116,19 @@ export default function LocationHoursSection() {
                 </div>
                 <div>
                   <h4 className="text-sm font-black text-amber-300 uppercase tracking-widest mb-1 flex items-center gap-2">
-                    <span>★ 1958 Drive-In Headlight Rule ★</span>
+                    <span>★ Authentic Drive-In Service ★</span>
                   </h4>
                   <p className="text-sm text-stone-200 leading-relaxed font-medium">
-                    &ldquo;{DINER_INFO.carHopInstructions}&rdquo;
+                    &ldquo;{DINER_INFO.orderingInstructions}&rdquo;
                   </p>
                   <div className="mt-3 flex flex-wrap items-center gap-3 text-xs text-stone-300 font-bold">
                     <span className="flex items-center gap-1">
                       <span className="w-2 h-2 rounded-full bg-emerald-400" />
-                      16 Covered Stalls
+                      12 Drive-In Spots
                     </span>
                     <span className="flex items-center gap-1">
                       <span className="w-2 h-2 rounded-full bg-[#F59E0B]" />
-                      Window Walk-Up Lane
+                      Carryout Counter Window
                     </span>
                   </div>
                 </div>
@@ -137,7 +137,7 @@ export default function LocationHoursSection() {
 
           </div>
 
-          {/* Column 2: Route 66 Map Frame */}
+          {/* Column 2: Augusta KS Map Frame */}
           <div className="lg:col-span-6 bg-[#FFFDF9] rounded-3xl border-4 border-stone-900 p-6 sm:p-8 shadow-[6px_6px_0px_0px_#1C1917] flex flex-col justify-between">
             <div>
               {/* Address Header */}
@@ -148,7 +148,7 @@ export default function LocationHoursSection() {
                   </div>
                   <div>
                     <h3 className="text-2xl font-black text-stone-950 font-serif">
-                      Route 66 Drive-In Spot
+                      Augusta, Kansas Spot
                     </h3>
                     <p className="text-sm font-bold text-stone-700 mt-0.5">
                       {DINER_INFO.address}
@@ -160,7 +160,7 @@ export default function LocationHoursSection() {
               {/* 1950s Stylized Map Canvas */}
               <div className="relative rounded-2xl overflow-hidden border-3 border-stone-900 bg-amber-50 h-64 sm:h-72 mb-6 group">
                 <div className="absolute inset-0 bg-stone-200 paper-grid">
-                  {/* Route 66 Highway strip */}
+                  {/* State Street strip */}
                   <div className="absolute top-1/2 left-0 right-0 h-14 bg-stone-900 -translate-y-1/2 flex items-center justify-around border-y-3 border-amber-400">
                     <div className="w-10 h-1.5 bg-amber-400" />
                     <div className="w-10 h-1.5 bg-amber-400" />
@@ -174,14 +174,14 @@ export default function LocationHoursSection() {
                       <Car className="w-6 h-6 text-amber-300" />
                     </div>
                     <div className="mt-2 bg-[#1C1917] text-white font-black text-xs px-3.5 py-1 rounded-xl border-2 border-amber-400 shadow-md whitespace-nowrap">
-                      Miller&apos;s Five Drive-In (1958)
+                      Miller&apos;s Drive In (Est. 1956)
                     </div>
                   </div>
 
-                  {/* Route 66 Shield */}
+                  {/* Augusta KS Shield */}
                   <div className="absolute top-4 left-4 bg-white border-2 border-stone-900 rounded-lg p-1.5 shadow-[2px_2px_0px_0px_#1C1917]">
-                    <div className="text-[7px] font-black uppercase text-stone-500">HISTORIC</div>
-                    <div className="text-xs font-black text-[#DC2626]">US 66</div>
+                    <div className="text-[7px] font-black uppercase text-stone-500">AUGUSTA</div>
+                    <div className="text-xs font-black text-[#DC2626]">KANSAS</div>
                   </div>
                 </div>
 
@@ -192,7 +192,7 @@ export default function LocationHoursSection() {
                   className="absolute inset-0 bg-stone-900/50 backdrop-blur-[1px] opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2 text-white font-black text-base z-20"
                 >
                   <Compass className="w-5 h-5 text-amber-400" />
-                  <span>Click for GPS Navigation to Stalls</span>
+                  <span>Click for GPS Navigation (Augusta, KS)</span>
                   <ExternalLink className="w-4 h-4" />
                 </a>
               </div>
@@ -201,10 +201,10 @@ export default function LocationHoursSection() {
               <div className="bg-amber-100/60 border-2 border-stone-900 rounded-xl p-4 mb-6 text-sm text-stone-800 space-y-1 shadow-[2px_2px_0px_0px_#1C1917]">
                 <div className="font-black text-stone-950 flex items-center gap-1.5">
                   <Navigation className="w-4 h-4 text-[#DC2626]" />
-                  Car-Hop Arrival Guide:
+                  State Street Drive-In &amp; Carryout:
                 </div>
                 <p className="text-xs sm:text-sm text-stone-700 font-medium">
-                  Direct turn-in from Route 66 Parkway. All 16 stalls have overhead rain &amp; sun canopies. Call ahead 10 minutes prior and your order will come straight off the flat-top!
+                  Located right on State Street (US-54 / US-77 corridor) in Augusta, KS. Ample parking and outdoor picnic seating. Call ahead 10-15 minutes and your order will be bagged piping hot right off the grill!
                 </p>
               </div>
             </div>
@@ -235,19 +235,19 @@ export default function LocationHoursSection() {
 
         </div>
 
-        {/* 1950s 16-Stall Car-Hop Guide & Headlight Simulator */}
+        {/* 1950s 12-Stall Drive-In Guide */}
         <div className="bg-[#FFFDF9] rounded-3xl border-4 border-stone-900 p-6 sm:p-8 shadow-[8px_8px_0px_0px_#1C1917]">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b-2 border-stone-900 mb-6">
             <div>
               <div className="inline-flex items-center gap-1.5 text-xs font-black uppercase text-[#92400E] bg-amber-200 px-3 py-1 rounded-full border border-stone-900 mb-1.5 shadow-[2px_2px_0px_0px_#1C1917]">
                 <Sparkles className="w-3.5 h-3.5" />
-                Interactive 1958 Stall Simulator
+                Drive-In Car &amp; Carryout Guide
               </div>
               <h3 className="text-2xl sm:text-3xl font-black font-serif text-stone-950">
-                16 Covered Car-Hop Stalls
+                12 Drive-In Parking Stalls &amp; Picnic Dining
               </h3>
               <p className="text-xs sm:text-sm text-stone-700 font-bold mt-0.5">
-                Pull into any open stall. Tap below to simulate turning your headlights ON for car-hop service!
+                Pull into any stall along State Street or walk right up to the window for fast carryout.
               </p>
             </div>
 
@@ -256,7 +256,7 @@ export default function LocationHoursSection() {
                 <div className={`w-3.5 h-3.5 rounded-full ${headlightsOn ? "bg-amber-400 shadow-[0_0_12px_#F59E0B] animate-pulse" : "bg-stone-600"}`} />
                 <div className="text-xs sm:text-sm">
                   <span className="font-mono font-black text-amber-400">Stall #{selectedStall}</span>
-                  <span className="text-stone-300 ml-1.5 font-bold">• Headlights ON</span>
+                  <span className="text-stone-300 ml-1.5 font-bold">• Ready for Dining</span>
                 </div>
                 <a
                   href={DINER_INFO.phoneTel}
@@ -268,9 +268,9 @@ export default function LocationHoursSection() {
             )}
           </div>
 
-          {/* 16 Stall Buttons Grid with 1950s Car Styling */}
-          <div className="grid grid-cols-4 sm:grid-cols-8 gap-3 mb-6">
-            {Array.from({ length: 16 }, (_, i) => i + 1).map((stallNum) => {
+          {/* 12 Stall Buttons Grid with 1950s Car Styling */}
+          <div className="grid grid-cols-3 sm:grid-cols-6 gap-3 mb-6">
+            {Array.from({ length: 12 }, (_, i) => i + 1).map((stallNum) => {
               const isSelected = selectedStall === stallNum;
               return (
                 <button
@@ -294,11 +294,11 @@ export default function LocationHoursSection() {
             <div className="flex items-center gap-2">
               <CheckCircle2 className="w-5 h-5 text-emerald-700 shrink-0" />
               <span>
-                All 16 stalls feature car-window tray service, call-ahead express window, and overhead weather canopies.
+                Enjoy picnic bench outdoor dining, drive-in parking, and quick walk-up window carryout.
               </span>
             </div>
             <span className="font-black uppercase text-[#DC2626] hidden sm:inline">
-              ★ 1958 Route 66 Tradition ★
+              ★ Butler County Tradition Since 1956 ★
             </span>
           </div>
         </div>

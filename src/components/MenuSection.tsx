@@ -7,6 +7,40 @@ import { DINER_INFO } from "@/data/dinerInfo";
 import { useTray } from "@/context/TrayContext";
 import SecretMenuModal from "./SecretMenuModal";
 
+interface CustomAddon {
+  id: string;
+  name: string;
+  price: number;
+  priceDisplay: string;
+}
+
+const BURGER_ADDONS: CustomAddon[] = [
+  { id: "extra-patty", name: "Add Extra Smashed Angus Patty", price: 2.50, priceDisplay: "+$2.50" },
+  { id: "bacon", name: "Thick-Cut Applewood Bacon", price: 1.50, priceDisplay: "+$1.50" },
+  { id: "extra-cheese", name: "Extra Melted American Cheese", price: 0.75, priceDisplay: "+$0.75" },
+  { id: "grilled-onions", name: "Extra Caramelized Grilled Onions", price: 0.50, priceDisplay: "+$0.50" },
+];
+
+const SHAKE_ADDONS: CustomAddon[] = [
+  { id: "malt-powder", name: "Extra Real Malted Barley Powder", price: 0.75, priceDisplay: "+$0.75" },
+  { id: "hot-fudge", name: "Warm Hot Fudge Swirl", price: 0.75, priceDisplay: "+$0.75" },
+  { id: "extra-whip-cherry", name: "Extra Whipped Cream & Maraschino Cherry", price: 0.50, priceDisplay: "+$0.50" },
+  { id: "crushed-oreo", name: "Crushed Oreo Cookie Crumbles", price: 1.00, priceDisplay: "+$1.00" },
+];
+
+const SIDE_ADDONS: CustomAddon[] = [
+  { id: "cheese-sauce", name: "Warm Cheddar Cheese Dip Cup", price: 0.95, priceDisplay: "+$0.95" },
+  { id: "chili-ladle", name: "Slow-Simmered Coney Chili Ladle", price: 1.25, priceDisplay: "+$1.25" },
+  { id: "house-ranch", name: "House-Made Buttermilk Ranch Cup", price: 0.75, priceDisplay: "+$0.75" },
+  { id: "extra-fry-seasoning", name: "Extra 1950s Diner Seasoned Salt", price: 0.25, priceDisplay: "+$0.25" },
+];
+
+function getAddonsForCategory(category: "combos" | "burgers" | "sides" | "shakes"): CustomAddon[] {
+  if (category === "shakes") return SHAKE_ADDONS;
+  if (category === "sides") return SIDE_ADDONS;
+  return BURGER_ADDONS;
+}
+
 export default function MenuSection() {
   const [activeCategory, setActiveCategory] = useState<"combos" | "burgers" | "sides" | "shakes">("combos");
   const [searchQuery, setSearchQuery] = useState("");
@@ -52,10 +86,11 @@ export default function MenuSection() {
   const calculateCustomTotal = () => {
     if (!selectedItemForCustomizing) return 0;
     let total = selectedItemForCustomizing.rawPrice;
-    if (extraAddons.includes("extra-patty")) total += 2.5;
-    if (extraAddons.includes("bacon")) total += 1.5;
-    if (extraAddons.includes("cheese-sauce")) total += 0.95;
-    if (extraAddons.includes("malt-upgrade")) total += 1.25;
+    const available = getAddonsForCategory(selectedItemForCustomizing.category);
+    for (const addonId of extraAddons) {
+      const match = available.find((a) => a.id === addonId);
+      if (match) total += match.price;
+    }
     return total;
   };
 
@@ -86,13 +121,13 @@ export default function MenuSection() {
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
           <div className="inline-flex items-center gap-2 bg-[#DC2626] text-white px-4 py-1.5 rounded-full text-xs sm:text-sm font-black uppercase tracking-widest mb-3 border-2 border-stone-900 shadow-[3px_3px_0px_0px_#1C1917]">
             <Flame className="w-4 h-4 text-amber-300" />
-            ★ 1950s Original Route 66 Diner Menu ★
+            ★ Authentic 1950s Flat-Top Drive-In Menu ★
           </div>
           <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black font-serif tracking-tight text-stone-950">
-            Miller&apos;s Five Drive-In Menu
+            Miller&apos;s Drive In Menu
           </h2>
           <p className="mt-3 text-stone-800 font-medium text-base sm:text-lg">
-            Smashed paper-thin on our 1958 seasoned flat-top with lace-crispy edges, real American cheese, and rich malted ice cream spun to order.
+            Smashed paper-thin on our seasoned flat-top with lace-crispy edges, real American cheese, and rich malted ice cream spun to order since 1956.
           </p>
         </div>
 
@@ -308,7 +343,7 @@ export default function MenuSection() {
             <div className="flex items-start justify-between pb-4 border-b-2 border-stone-900 mb-5">
               <div>
                 <span className="text-[10px] font-black uppercase tracking-wider bg-red-100 text-[#DC2626] px-2.5 py-0.5 rounded-full border border-red-300">
-                  ★ 1958 Car-Hop Customizer ★
+                  ★ Drive-In Customizer ★
                 </span>
                 <h3 className="text-2xl font-black font-serif text-stone-950 mt-1">
                   {selectedItemForCustomizing.name}
@@ -331,61 +366,38 @@ export default function MenuSection() {
             {/* Customization Options */}
             <div className="space-y-4 mb-6">
               <h4 className="text-xs font-black uppercase tracking-wider text-stone-600">
-                1950s Diner Additions:
+                {selectedItemForCustomizing.category === "shakes"
+                  ? "Shake & Drink Customizations:"
+                  : selectedItemForCustomizing.category === "sides"
+                  ? "Side Dips & Toppings:"
+                  : "Burger & Flat-Top Additions:"}
               </h4>
 
               <div className="space-y-2">
-                <label className="flex items-center justify-between p-3 rounded-xl border-2 border-stone-900 bg-white shadow-[2px_2px_0px_0px_#1C1917] cursor-pointer">
-                  <div className="flex items-center gap-2.5">
-                    <input
-                      type="checkbox"
-                      checked={extraAddons.includes("extra-patty")}
-                      onChange={() => toggleAddon("extra-patty")}
-                      className="w-4 h-4 text-[#DC2626] rounded border-stone-400"
-                    />
-                    <span className="text-sm font-black text-stone-900">Add Extra Smashed Angus Patty</span>
-                  </div>
-                  <span className="text-xs font-mono font-black text-[#DC2626]">+$2.50</span>
-                </label>
-
-                <label className="flex items-center justify-between p-3 rounded-xl border-2 border-stone-900 bg-white shadow-[2px_2px_0px_0px_#1C1917] cursor-pointer">
-                  <div className="flex items-center gap-2.5">
-                    <input
-                      type="checkbox"
-                      checked={extraAddons.includes("bacon")}
-                      onChange={() => toggleAddon("bacon")}
-                      className="w-4 h-4 text-[#DC2626] rounded border-stone-400"
-                    />
-                    <span className="text-sm font-black text-stone-900">Thick-Cut Applewood Bacon</span>
-                  </div>
-                  <span className="text-xs font-mono font-black text-[#DC2626]">+$1.50</span>
-                </label>
-
-                <label className="flex items-center justify-between p-3 rounded-xl border-2 border-stone-900 bg-white shadow-[2px_2px_0px_0px_#1C1917] cursor-pointer">
-                  <div className="flex items-center gap-2.5">
-                    <input
-                      type="checkbox"
-                      checked={extraAddons.includes("cheese-sauce")}
-                      onChange={() => toggleAddon("cheese-sauce")}
-                      className="w-4 h-4 text-[#DC2626] rounded border-stone-400"
-                    />
-                    <span className="text-sm font-black text-stone-900">Warm Cheddar Cheese Dip</span>
-                  </div>
-                  <span className="text-xs font-mono font-black text-[#DC2626]">+$0.95</span>
-                </label>
-
-                <label className="flex items-center justify-between p-3 rounded-xl border-2 border-stone-900 bg-white shadow-[2px_2px_0px_0px_#1C1917] cursor-pointer">
-                  <div className="flex items-center gap-2.5">
-                    <input
-                      type="checkbox"
-                      checked={extraAddons.includes("malt-upgrade")}
-                      onChange={() => toggleAddon("malt-upgrade")}
-                      className="w-4 h-4 text-[#DC2626] rounded border-stone-400"
-                    />
-                    <span className="text-sm font-black text-stone-900">Double Real Malt Powder</span>
-                  </div>
-                  <span className="text-xs font-mono font-black text-[#DC2626]">+$1.25</span>
-                </label>
+                {getAddonsForCategory(selectedItemForCustomizing.category).map((addon) => {
+                  const isChecked = extraAddons.includes(addon.id);
+                  return (
+                    <label
+                      key={addon.id}
+                      className={`flex items-center justify-between p-3 rounded-xl border-2 border-stone-900 bg-white shadow-[2px_2px_0px_0px_#1C1917] cursor-pointer transition-all ${
+                        isChecked ? "bg-amber-50 border-[#DC2626]" : ""
+                      }`}
+                    >
+                      <div className="flex items-center gap-2.5">
+                        <input
+                          type="checkbox"
+                          checked={isChecked}
+                          onChange={() => toggleAddon(addon.id)}
+                          className="w-4 h-4 text-[#DC2626] rounded border-stone-400"
+                        />
+                        <span className="text-sm font-black text-stone-900">{addon.name}</span>
+                      </div>
+                      <span className="text-xs font-mono font-black text-[#DC2626]">
+                        {addon.priceDisplay}
+                      </span>
+                    </label>
+                  );
+                })}
               </div>
             </div>
 

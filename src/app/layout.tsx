@@ -16,24 +16,25 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Miller's Five Drive-In | Classic Smashed Burgers & Hand-Spun Shakes",
+  title: "Miller's Drive In | Classic Smashed Burgers & Hand-Spun Shakes | Augusta, KS",
   description:
-    "Historic Route 66 drive-in serving fresh smashed Angus burgers with lace-crispy edges, golden crinkle-cut fries, and thick hand-spun malts. 16 car-hop stalls and call-ahead carryout.",
+    "Historic Augusta, Kansas drive-in serving fresh flat-top smashed Angus burgers with lace-crispy edges, golden crinkle-cut fries, and thick hand-spun malts since 1956. Call-ahead carryout and picnic dining.",
   keywords: [
-    "Miller's Five Drive-In",
+    "Miller's Drive In",
+    "Augusta KS burger",
     "Drive-in diner",
     "Smashed burgers",
     "Crinkle cut fries",
     "Hand-spun shakes",
-    "Route 66 diner",
-    "Car-hop service",
-    "Lincoln Illinois burger",
+    "Butler County restaurant",
+    "State Street Augusta",
+    "Kansas drive-in",
   ],
   authors: [{ name: "KP Websites" }],
   openGraph: {
-    title: "Miller's Five Drive-In | Smashed Burgers & Shakes",
+    title: "Miller's Drive In | Smashed Burgers & Shakes | Augusta, KS",
     description:
-      "100% fresh Midwest beef smashed thin on our screaming-hot flat-top grill, crinkle fries, and thick malt shakes.",
+      "100% fresh Midwest beef smashed thin on our seasoned flat-top grill, crinkle fries, and thick malt shakes in Augusta, KS.",
     type: "website",
     locale: "en_US",
   },
@@ -49,14 +50,14 @@ export const viewport: Viewport = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "FastFoodRestaurant",
-  name: "Miller's Five Drive-In",
-  telephone: "(555) 348-3483",
+  name: "Miller's Drive In",
+  telephone: "(316) 775-9989",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "505 Route 66 Parkway",
-    addressLocality: "Lincoln",
-    addressRegion: "IL",
-    postalCode: "62656",
+    streetAddress: "330 State Street",
+    addressLocality: "Augusta",
+    addressRegion: "KS",
+    postalCode: "67010",
     addressCountry: "US",
   },
   servesCuisine: ["American", "Burgers", "Drive-In Diner", "Ice Cream", "Shakes"],
@@ -64,21 +65,9 @@ const jsonLd = {
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday"],
-      opens: "11:00",
-      closes: "21:00",
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Friday", "Saturday"],
-      opens: "11:00",
-      closes: "22:00",
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: "Sunday",
-      opens: "12:00",
-      closes: "20:30",
+      dayOfWeek: ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      opens: "11:30",
+      closes: "19:30",
     },
   ],
 };

@@ -13,23 +13,23 @@ export default function Footer() {
           {/* Brand & Mission */}
           <div className="lg:col-span-5 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="relative shrink-0 flex flex-col items-center justify-center bg-white border-2 border-amber-400 rounded-lg p-1 w-10 h-11 shadow-[2px_2px_0px_0px_#DC2626]">
-                <span className="text-[7px] font-black uppercase text-stone-600 tracking-tighter leading-none">US</span>
-                <span className="text-base font-black font-serif text-[#DC2626] leading-none">66</span>
+              <div className="relative shrink-0 flex flex-col items-center justify-center bg-[#DC2626] border-2 border-amber-400 rounded-lg p-1 w-10 h-11 shadow-[2px_2px_0px_0px_#F59E0B] text-white">
+                <span className="text-[7px] font-black uppercase text-amber-300 tracking-tighter leading-none">EST.</span>
+                <span className="text-sm font-black font-serif text-white leading-none mt-0.5">1956</span>
               </div>
 
               <div>
                 <span className="font-black text-2xl sm:text-3xl font-serif text-white tracking-tight uppercase">
-                  Miller&apos;s <span className="text-[#DC2626] drop-shadow-[1px_1px_0px_#F59E0B]">Five</span>
+                  Miller&apos;s <span className="text-[#DC2626] drop-shadow-[1px_1px_0px_#F59E0B]">Drive-In</span>
                 </span>
                 <span className="block text-xs font-black tracking-widest text-[#F59E0B] uppercase">
-                  Route 66 Drive-In Diner • Est. 1958
+                  Augusta, KS • Est. 1956
                 </span>
               </div>
             </div>
 
             <p className="text-stone-300 text-sm leading-relaxed max-w-sm font-medium">
-              Sizzling lace-crisp smashed burgers, golden crinkle-cut fries, and whole milk hand-spun malts served car-hop style since 1958.
+              Sizzling lace-crisp smashed burgers, golden crinkle-cut fries, and whole milk hand-spun malts served in Augusta since 1956.
             </p>
 
             <div className="pt-2 flex items-center gap-3">
@@ -60,22 +60,22 @@ export default function Footer() {
             <ul className="space-y-2 text-sm font-bold">
               <li>
                 <a href="#menu" className="hover:text-amber-400 transition-colors flex items-center gap-1.5">
-                  <span>› 1958 Smashed Menu &amp; Malts</span>
+                  <span>› Smashed Menu &amp; Malts</span>
                 </a>
               </li>
               <li>
                 <a href="#about" className="hover:text-amber-400 transition-colors flex items-center gap-1.5">
-                  <span>› Route 66 Diner Heritage</span>
+                  <span>› Augusta Diner Heritage</span>
                 </a>
               </li>
               <li>
                 <a href="#location" className="hover:text-amber-400 transition-colors flex items-center gap-1.5">
-                  <span>› 16 Covered Car-Hop Stalls</span>
+                  <span>› Hours &amp; Location</span>
                 </a>
               </li>
               <li>
                 <a href="#vip" className="hover:text-amber-400 transition-colors flex items-center gap-1.5">
-                  <span>› Cruisers Club Secret Menu</span>
+                  <span>› VIP Cruisers Club</span>
                 </a>
               </li>
             </ul>
@@ -89,16 +89,12 @@ export default function Footer() {
             </h4>
             <div className="bg-stone-900 rounded-2xl p-4 border-2 border-stone-800 space-y-1.5 text-xs shadow-inner">
               <div className="flex justify-between text-stone-300">
-                <span className="font-bold">Mon – Thu:</span>
-                <span className="font-mono font-black text-white">11:00 AM – 9:00 PM</span>
+                <span className="font-bold">Tue – Sat:</span>
+                <span className="font-mono font-black text-[#F59E0B]">11:30 AM – 7:30 PM</span>
               </div>
               <div className="flex justify-between text-stone-300">
-                <span className="font-bold">Fri – Sat:</span>
-                <span className="font-mono font-black text-[#F59E0B]">11:00 AM – 10:00 PM</span>
-              </div>
-              <div className="flex justify-between text-stone-300">
-                <span className="font-bold">Sunday:</span>
-                <span className="font-mono font-black text-white">12:00 PM – 8:30 PM</span>
+                <span className="font-bold">Sun – Mon:</span>
+                <span className="font-mono font-black text-stone-400">Closed</span>
               </div>
               <div className="pt-2 mt-2 border-t border-stone-800 text-[11px] text-stone-400 font-bold">
                 📍 {DINER_INFO.address}
@@ -111,7 +107,7 @@ export default function Footer() {
         {/* Bottom Bar with Attribution */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-400">
           <p className="font-bold">
-            &copy; {new Date().getFullYear()} {DINER_INFO.name}. Route 66 Car-Hop Tradition Since 1958.
+            &copy; {new Date().getFullYear()} {DINER_INFO.name}. Augusta Drive-In Tradition Since 1956.
           </p>
 
           <div className="flex items-center gap-2 bg-stone-900 px-3.5 py-1.5 rounded-full border border-amber-400/40 shadow-xs">

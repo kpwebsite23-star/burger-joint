@@ -23,7 +23,7 @@ export default function HeroSection() {
               <span className="w-2.5 h-2.5 rounded-full bg-[#DC2626] animate-ping" />
               <span className="text-xs sm:text-sm font-black uppercase tracking-widest text-stone-900 flex items-center gap-1.5">
                 <Sparkles className="w-3.5 h-3.5 text-[#F59E0B]" />
-                Historic Route 66 Drive-In • Since 1958
+                Historic Augusta Drive-In • Est. 1956
               </span>
             </div>
 
@@ -48,7 +48,7 @@ export default function HeroSection() {
                 className="tap-target px-7 py-4 rounded-2xl bg-[#DC2626] hover:bg-[#B91C1C] text-white font-black text-base sm:text-lg tracking-wide uppercase flex items-center justify-center gap-3 shadow-[5px_5px_0px_0px_#1C1917] hover:shadow-[2px_2px_0px_0px_#1C1917] hover:translate-x-[3px] hover:translate-y-[3px] transition-all border-3 border-stone-900"
               >
                 <Phone className="w-5 h-5 animate-bounce text-amber-300" />
-                <span>Call Car-Hop ({DINER_INFO.phoneDisplay})</span>
+                <span>Call To Order ({DINER_INFO.phoneDisplay})</span>
               </a>
 
               <a
@@ -56,7 +56,7 @@ export default function HeroSection() {
                 className="tap-target px-6 py-4 rounded-2xl bg-white border-3 border-stone-900 hover:bg-stone-50 text-stone-950 font-black text-base uppercase tracking-wider flex items-center justify-center gap-2 shadow-[5px_5px_0px_0px_#1C1917] hover:shadow-[2px_2px_0px_0px_#1C1917] hover:translate-x-[3px] hover:translate-y-[3px] transition-all"
               >
                 <ArrowDown className="w-5 h-5 text-[#DC2626]" />
-                Explore 1958 Menu
+                Explore Menu
               </a>
 
               <a
@@ -98,8 +98,8 @@ export default function HeroSection() {
                     <Car className="w-5 h-5" />
                   </div>
                   <div>
-                    <div className="font-black text-stone-950 text-sm">Drive-In &amp; Dine-Out</div>
-                    <div className="text-xs text-stone-600">16 stalls &amp; car-hop trays</div>
+                    <div className="font-black text-stone-950 text-sm">Carryout &amp; Car Dining</div>
+                    <div className="text-xs text-stone-600">State St benches &amp; pickup</div>
                   </div>
                 </div>
               </div>
@@ -118,10 +118,10 @@ export default function HeroSection() {
                 <div className="flex items-center justify-between pb-3 border-b-2 border-dashed border-stone-400 mb-4">
                   <div>
                     <span className="font-mono text-xs font-black tracking-widest text-[#DC2626] uppercase block">
-                      ★ GUEST CHECK #1958-058 ★
+                      ★ GUEST CHECK #1956-001 ★
                     </span>
                     <span className="text-[10px] font-bold text-stone-500 uppercase tracking-wider">
-                      CAR-HOP STALL #7 • SERVER: BETTY
+                      AUGUSTA, KS • CARRYOUT &amp; PICNIC DINING
                     </span>
                   </div>
 
@@ -134,7 +134,7 @@ export default function HeroSection() {
                 {/* 1950s Order Showcase Banner */}
                 <div className="relative rounded-2xl bg-gradient-to-br from-[#B91C1C] via-[#DC2626] to-[#991B1B] p-6 text-white text-center shadow-md border-3 border-stone-900 overflow-hidden mb-5">
                   <div className="inline-block bg-[#1C1917] text-[#F59E0B] font-black text-xs uppercase tracking-widest px-3 py-1 rounded-full border border-amber-400 mb-3 shadow-sm">
-                    ★ THE 1958 ROUTE 66 FAVORITE ★
+                    ★ THE STATE STREET FAVORITE ★
                   </div>
 
                   <div className="text-3xl sm:text-4xl font-black font-serif tracking-tight drop-shadow-[2px_2px_0px_#1C1917] mb-1">
@@ -165,7 +165,7 @@ export default function HeroSection() {
                     <span className="font-bold">$5.45</span>
                   </div>
                   <div className="flex justify-between pt-1 font-black text-sm text-[#DC2626]">
-                    <span>CAR-HOP TRAY TOTAL:</span>
+                    <span>DRIVE-IN TOTAL:</span>
                     <span>$18.35</span>
                   </div>
                 </div>
@@ -174,7 +174,7 @@ export default function HeroSection() {
                 <div className="bg-amber-100/90 rounded-2xl p-3 border-2 border-stone-900 flex items-center justify-between">
                   <div className="text-left">
                     <div className="text-[10px] font-black text-stone-600 uppercase tracking-wide">
-                      Drive-In Stalls &amp; Carryout
+                      State St Drive-In &amp; Carryout
                     </div>
                     <div className="text-xs sm:text-sm font-black text-stone-950">
                       Call Ahead: {DINER_INFO.phoneDisplay}
@@ -192,10 +192,10 @@ export default function HeroSection() {
 
               </div>
 
-              {/* 1950s Floating Route 66 Shield Stamp */}
+              {/* 1950s Floating Award Stamp */}
               <div className="absolute -bottom-4 -left-4 bg-[#F59E0B] text-stone-950 font-black text-xs sm:text-sm px-4 py-2.5 rounded-2xl border-3 border-stone-900 shadow-[4px_4px_0px_0px_#1C1917] rotate-[-5deg] flex items-center gap-2">
                 <Award className="w-4 h-4 text-stone-950" />
-                <span>★ Voted #1 Burger on Route 66 ★</span>
+                <span>★ Butler County Favorite Since 1956 ★</span>
               </div>
 
             </div>

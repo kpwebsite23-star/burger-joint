@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Phone, Navigation, Menu as MenuIcon, X, UtensilsCrossed, Sparkles, Shield } from "lucide-react";
+import { Phone, Navigation, Menu as MenuIcon, X, Sparkles, Utensils } from "lucide-react";
 import { DINER_INFO } from "@/data/dinerInfo";
 
 export default function Navbar() {
@@ -20,42 +20,43 @@ export default function Navbar() {
       <div className="w-full h-1.5 checker-border opacity-75" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20 gap-4">
+        <div className="flex items-center justify-between h-20 gap-2 sm:gap-4">
           
-          {/* 1950s Brand Wordmark with Route 66 Shield Emblem */}
+          {/* 1950s Brand Wordmark with Vintage Diner Emblem */}
           <a
             href="#"
-            className="flex items-center gap-2.5 sm:gap-3.5 group cursor-pointer shrink-0 py-1"
+            className="flex items-center gap-2 sm:gap-3 group cursor-pointer shrink-0 py-1"
           >
-            {/* Route 66 Highway Shield Graphic */}
-            <div className="relative shrink-0 flex flex-col items-center justify-center bg-white border-2 border-stone-900 rounded-lg p-1 w-10 h-11 shadow-[2px_2px_0px_0px_#1C1917] group-hover:rotate-3 transition-transform">
-              <span className="text-[7px] font-black uppercase text-stone-600 tracking-tighter leading-none">US</span>
-              <span className="text-base font-black font-serif text-[#DC2626] leading-none">66</span>
+            {/* Retro Diner Sign Shield Graphic */}
+            <div className="relative shrink-0 flex flex-col items-center justify-center bg-[#DC2626] border-2 border-stone-900 rounded-xl p-1 w-10 h-11 shadow-[2px_2px_0px_0px_#1C1917] group-hover:rotate-3 transition-transform text-white">
+              <span className="text-[7px] font-black uppercase text-amber-300 tracking-tighter leading-none">EST.</span>
+              <span className="text-sm font-black font-serif text-white leading-none mt-0.5">1956</span>
+              <Utensils className="w-2.5 h-2.5 text-amber-300 mt-0.5" />
             </div>
 
             <div className="flex flex-col sm:flex-row sm:items-baseline sm:gap-2">
               <span className="font-black text-2xl sm:text-3xl tracking-tight text-[#1C1917] font-serif uppercase whitespace-nowrap">
-                Miller&apos;s <span className="text-[#DC2626] drop-shadow-[1px_1px_0px_#1C1917]">Five</span>
+                Miller&apos;s
               </span>
-              <span className="text-xs font-black tracking-widest uppercase text-stone-600 whitespace-nowrap">
+              <span className="text-xs sm:text-sm font-black tracking-widest uppercase text-[#DC2626] drop-shadow-[1px_1px_0px_#1C1917] whitespace-nowrap">
                 Drive-In
               </span>
             </div>
 
-            {/* 1950s Vintage Scalloped Badge */}
-            <span className="hidden xl:inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-black uppercase tracking-wider bg-amber-100 text-[#92400E] border-2 border-[#D97706] whitespace-nowrap shrink-0 shadow-[2px_2px_0px_0px_#92400E]">
+            {/* 1950s Vintage Badge */}
+            <span className="hidden 2xl:inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-black uppercase tracking-wider bg-amber-100 text-[#92400E] border-2 border-[#D97706] whitespace-nowrap shrink-0 shadow-[2px_2px_0px_0px_#92400E]">
               <Sparkles className="w-3 h-3 text-[#D97706]" />
-              Est. 1958 • Route 66
+              Augusta, KS
             </span>
           </a>
 
           {/* Desktop Nav Links in 1950s Diner Style */}
-          <div className="hidden md:flex items-center space-x-1 lg:space-x-3 shrink-0">
+          <div className="hidden lg:flex items-center space-x-1 xl:space-x-2">
             {navLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
-                className="tap-target px-3 py-2 rounded-xl text-sm font-black uppercase tracking-wider text-stone-800 hover:text-[#DC2626] hover:bg-amber-50/80 transition-colors whitespace-nowrap"
+                className="tap-target px-2.5 xl:px-3 py-2 rounded-xl text-xs xl:text-sm font-black uppercase tracking-wider text-stone-800 hover:text-[#DC2626] hover:bg-amber-50/80 transition-colors whitespace-nowrap"
               >
                 {link.label}
               </a>
@@ -63,12 +64,12 @@ export default function Navbar() {
           </div>
 
           {/* Desktop Action Buttons with 1950s 3D Drop Shadows */}
-          <div className="hidden lg:flex items-center gap-3 shrink-0">
+          <div className="hidden lg:flex items-center gap-2 xl:gap-3 shrink-0">
             <a
               href={DINER_INFO.mapsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="tap-target px-4 py-2.5 rounded-xl border-2 border-stone-900 bg-white hover:bg-stone-50 text-stone-900 font-black text-sm flex items-center gap-2 transition-all shadow-[3px_3px_0px_0px_#1C1917] hover:shadow-[1px_1px_0px_0px_#1C1917] hover:translate-x-[2px] hover:translate-y-[2px] whitespace-nowrap"
+              className="hidden xl:inline-flex tap-target px-3.5 py-2.5 rounded-xl border-2 border-stone-900 bg-white hover:bg-stone-50 text-stone-900 font-black text-xs xl:text-sm items-center gap-1.5 transition-all shadow-[3px_3px_0px_0px_#1C1917] hover:shadow-[1px_1px_0px_0px_#1C1917] hover:translate-x-[2px] hover:translate-y-[2px] whitespace-nowrap"
             >
               <Navigation className="w-4 h-4 text-[#DC2626] shrink-0" />
               <span>Directions</span>
@@ -76,15 +77,15 @@ export default function Navbar() {
 
             <a
               href={DINER_INFO.phoneTel}
-              className="tap-target px-5 py-2.5 rounded-xl bg-[#DC2626] hover:bg-[#B91C1C] text-white font-black text-sm tracking-wider uppercase flex items-center gap-2 transition-all shadow-[3px_3px_0px_0px_#1C1917] hover:shadow-[1px_1px_0px_0px_#1C1917] hover:translate-x-[2px] hover:translate-y-[2px] active:scale-95 whitespace-nowrap border-2 border-stone-900"
+              className="tap-target px-4 xl:px-5 py-2.5 rounded-xl bg-[#DC2626] hover:bg-[#B91C1C] text-white font-black text-xs xl:text-sm tracking-wider uppercase flex items-center gap-2 transition-all shadow-[3px_3px_0px_0px_#1C1917] hover:shadow-[1px_1px_0px_0px_#1C1917] hover:translate-x-[2px] hover:translate-y-[2px] active:scale-95 whitespace-nowrap border-2 border-stone-900"
             >
               <Phone className="w-4 h-4 shrink-0 text-amber-300" />
               <span>Call In Order</span>
             </a>
           </div>
 
-          {/* Mobile Menu Toggle */}
-          <div className="flex items-center gap-2 md:hidden shrink-0">
+          {/* Mobile & Tablet Menu Toggle */}
+          <div className="flex items-center gap-2 lg:hidden shrink-0">
             <a
               href={DINER_INFO.phoneTel}
               aria-label="Call Diner"
@@ -109,7 +110,7 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-[#FFFDF9] border-b-4 border-stone-900 px-4 pt-3 pb-6 space-y-3 shadow-2xl animate-in slide-in-from-top-2">
+        <div className="lg:hidden bg-[#FFFDF9] border-b-4 border-stone-900 px-4 pt-3 pb-6 space-y-3 shadow-2xl animate-in slide-in-from-top-2">
           <div className="flex flex-col space-y-1">
             {navLinks.map((link) => (
               <a
@@ -132,7 +133,7 @@ export default function Navbar() {
               className="tap-target w-full px-4 py-3 rounded-xl border-2 border-stone-900 text-stone-900 font-black text-sm flex items-center justify-center gap-2 bg-white shadow-[3px_3px_0px_0px_#1C1917]"
             >
               <Navigation className="w-4 h-4 text-[#DC2626]" />
-              Get Turn-by-Turn Directions
+              Get Directions (Augusta, KS)
             </a>
             <a
               href={DINER_INFO.phoneTel}

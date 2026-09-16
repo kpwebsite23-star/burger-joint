@@ -13,7 +13,7 @@ interface SecretItem {
 
 const SECRET_ITEMS: SecretItem[] = [
   {
-    name: "The Quadruple Route 66 Monster Smash",
+    name: "The Quadruple State Street Monster Smash",
     price: "$15.95",
     desc: "4 fresh Angus beef patties smashed super-thin with quadruple American cheese, triple secret sauce, and mountain of crispy grilled onions.",
     tag: "VIP Legendary Stack",
@@ -72,10 +72,10 @@ export default function SecretMenuModal() {
             </div>
 
             <h3 className="text-2xl sm:text-3xl font-black font-serif text-white mb-2">
-              The Miller&apos;s Five Secret Vault
+              The Miller&apos;s Secret Vault
             </h3>
             <p className="text-stone-300 text-xs sm:text-sm mb-6">
-              Exclusive items only available by request. Tell your car-hop or mention by name when you call!
+              Exclusive items only available by request. Order at the window or mention by name when you call!
             </p>
 
             <div className="space-y-3.5 mb-6 max-h-80 overflow-y-auto pr-1">

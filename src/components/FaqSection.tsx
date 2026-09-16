@@ -11,28 +11,28 @@ interface FaqItem {
 
 const FAQ_ITEMS: FaqItem[] = [
   {
-    question: "How does car-hop service work when I pull in?",
-    answer: "It's classic roadside dining! Pull into any of our 16 covered stalls and switch on your headlights. A car-hop server will come right to your driver's window to take your order and deliver your hot meal on a vintage window tray.",
+    question: "How does drive-in ordering and pickup work?",
+    answer: "We offer drive-in parking, walk-up counter service, and fast phone carryout! You can pull into our State Street lot, order right at the window, or call ahead at (316) 775-9989 so your meal is ready the moment you arrive. You're also welcome to enjoy your meal at our outdoor picnic benches under the Kansas sun.",
   },
   {
-    question: "Can I pay by credit card, Apple Pay, or cash from my car stall?",
-    answer: "Yes! Our car-hops carry wireless payment terminals right to your vehicle window. We accept Apple Pay, Google Pay, all major credit/debit cards, and cash.",
+    question: "Can I pay by credit card, Apple Pay, or cash?",
+    answer: "Yes! We accept Apple Pay, Google Pay, all major credit/debit cards, and cash at our counter window.",
   },
   {
     question: "How quickly is my order prepared?",
-    answer: "Every burger is smashed paper-thin on our screaming-hot 450°F griddle to order. Most orders are piping hot and tray-delivered within 6 to 8 minutes of ordering.",
+    answer: "Every burger is smashed paper-thin on our seasoned 450°F griddle to order. Most orders are piping hot and ready within 6 to 8 minutes of ordering.",
   },
   {
     question: "Can I call ahead before arriving?",
-    answer: "Absolutely! Call (555) 348-3483 before leaving home. Give us your estimated arrival time and we'll have your food coming off the grill the moment you pull into a stall or walk up to the express pickup window.",
+    answer: `Absolutely! Call ${DINER_INFO.phoneDisplay} before leaving home. Give us your order and estimated arrival time and we'll have your food coming off the grill the moment you pull up to the carryout window.`,
   },
   {
     question: "Do you offer gluten-friendly or dietary accommodations?",
-    answer: "Yes! Any smash burger can be served in a crisp romaine lettuce wrap or on a gluten-free bun upon request. We also offer vegetarian grilled cheese, crispy sides, and fresh fruit lemonades.",
+    answer: "Yes! Any smash burger can be served in a crisp romaine lettuce wrap upon request. We also offer grilled cheese, crispy sides, and fresh fruit lemonades.",
   },
   {
     question: "What makes your hand-spun malt shakes different?",
-    answer: "We never use pre-mix soft serve. Our shakes are spun with whole milk, real rich Midwest dairy ice cream, and traditional malted barley powder on vintage Hamilton Beach spindle machines.",
+    answer: "We never use pre-mix soft serve. Our shakes are spun with whole milk, real rich Midwest dairy ice cream, and traditional malted barley powder on vintage spindle machines.",
   },
 ];
 
@@ -57,7 +57,7 @@ export default function FaqSection() {
             Frequently Asked Questions
           </h2>
           <p className="mt-3 text-stone-600 font-medium text-base">
-            Everything you need to know about our Route 66 drive-in experience, car-hop stalls, and menu.
+            Everything you need to know about Miller&apos;s Drive In, carryout pickup, and our menu.
           </p>
         </div>
 

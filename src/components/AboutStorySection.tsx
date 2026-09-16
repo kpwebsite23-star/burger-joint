@@ -1,31 +1,8 @@
-"use client";
-
-import { useState } from "react";
-import { Star, Heart, Award, ShieldCheck, Quote } from "lucide-react";
-import { DINER_INFO, Testimonial } from "@/data/dinerInfo";
-import ReviewModal from "./ReviewModal";
+import { Star, Heart, Award, ShieldCheck, Quote, ExternalLink } from "lucide-react";
+import { DINER_INFO } from "@/data/dinerInfo";
 
 export default function AboutStorySection() {
-  const [testimonialsList, setTestimonialsList] = useState<Testimonial[]>(DINER_INFO.testimonials);
-
-  const handleAddReview = (newReview: {
-    author: string;
-    location: string;
-    rating: number;
-    quote: string;
-    favoriteItem: string;
-  }) => {
-    const item: Testimonial = {
-      id: `${Date.now()}`,
-      author: newReview.author,
-      location: newReview.location,
-      rating: newReview.rating,
-      quote: newReview.quote,
-      favoriteItem: newReview.favoriteItem,
-      date: "Verified Customer • Just now",
-    };
-    setTestimonialsList([item, ...testimonialsList]);
-  };
+  const testimonialsList = DINER_INFO.testimonials;
 
   return (
     <section id="about" className="py-16 sm:py-20 lg:py-24 bg-[#FFFDF9] border-b-4 border-stone-900 scroll-mt-24 relative">
@@ -45,7 +22,7 @@ export default function AboutStorySection() {
               <div className="relative bg-white rounded-3xl border-4 border-stone-900 p-8 shadow-[8px_8px_0px_0px_#1C1917] rotate-[-1deg]">
                 <div className="inline-flex items-center gap-2 bg-amber-200 text-[#78350F] border-2 border-stone-900 px-3.5 py-1 rounded-full text-xs font-black uppercase tracking-widest mb-4 shadow-[2px_2px_0px_0px_#1C1917]">
                   <Award className="w-4 h-4" />
-                  Family Recipe Since 1958
+                  Serving Augusta Since 1956
                 </div>
 
                 <h3 className="text-2xl sm:text-3xl font-black font-serif text-stone-950 mb-3">
@@ -71,7 +48,7 @@ export default function AboutStorySection() {
                 </div>
               </div>
 
-              {/* 1950s Floating Route 66 Heart Stamp */}
+              {/* 1950s Floating Heart Stamp */}
               <div className="absolute -top-4 -right-4 bg-[#DC2626] text-white p-3 sm:p-4 rounded-2xl border-3 border-stone-900 shadow-[4px_4px_0px_0px_#1C1917] rotate-12 hidden sm:block">
                 <Heart className="w-6 h-6 fill-white" />
               </div>
@@ -82,11 +59,11 @@ export default function AboutStorySection() {
           <div className="lg:col-span-7">
             <div className="inline-flex items-center gap-2 bg-red-100 text-[#DC2626] px-3.5 py-1 rounded-full text-xs sm:text-sm font-black uppercase tracking-widest mb-4 border-2 border-stone-900 shadow-[2px_2px_0px_0px_#1C1917]">
               <ShieldCheck className="w-4 h-4" />
-              Route 66 Car-Hop Heritage
+              Augusta Community Heritage
             </div>
 
             <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black font-serif tracking-tight text-stone-950 mb-6">
-              Over 6 Decades of Car-Hop Tradition
+              Over 6 Decades of Augusta Drive-In Tradition
             </h2>
 
             <p className="text-base sm:text-lg text-stone-800 font-medium leading-relaxed mb-6">
@@ -106,10 +83,10 @@ export default function AboutStorySection() {
                 ★ Crinkle Fries &amp; Real Dairy
               </span>
               <span className="px-4 py-2 rounded-xl bg-amber-100 border-2 border-stone-900 text-stone-950 text-xs sm:text-sm font-black uppercase shadow-[2px_2px_0px_0px_#1C1917]">
-                ★ Friendly Car-Hop Trays
+                ★ Carryout &amp; Picnic Dining
               </span>
               <span className="px-4 py-2 rounded-xl bg-amber-100 border-2 border-stone-900 text-stone-950 text-xs sm:text-sm font-black uppercase shadow-[2px_2px_0px_0px_#1C1917]">
-                ★ Spun on 1958 Spindles
+                ★ Hand-Spun Thick Malts
               </span>
             </div>
           </div>
@@ -126,14 +103,23 @@ export default function AboutStorySection() {
                 ))}
               </div>
               <h3 className="text-2xl sm:text-4xl font-black font-serif text-stone-950">
-                Loved by Locals &amp; Highway Cruisers
+                Loved by Generations of Augusta Locals
               </h3>
               <p className="text-stone-700 font-bold text-sm sm:text-base mt-1">
-                Over 2,400 five-star reviews from travelers who know real flat-top smashed burgers.
+                Authentic community praise from lifelong Butler County regulars, neighbors, and day-trippers.
               </p>
             </div>
 
-            <ReviewModal onAddReview={handleAddReview} />
+            <a
+              href={DINER_INFO.googleReviewsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="tap-target px-5 py-3 rounded-2xl bg-white hover:bg-stone-50 border-3 border-stone-900 text-stone-900 font-black text-xs sm:text-sm uppercase flex items-center gap-2 shadow-[4px_4px_0px_0px_#1C1917] hover:shadow-[2px_2px_0px_0px_#1C1917] hover:translate-x-[2px] hover:translate-y-[2px] transition-all whitespace-nowrap cursor-pointer"
+            >
+              <Star className="w-4 h-4 fill-amber-400 text-amber-500" />
+              <span>Review Us on Google</span>
+              <ExternalLink className="w-4 h-4 text-stone-500" />
+            </a>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
