@@ -133,19 +133,6 @@ body {
   justify-content: center;
 }
 
-/* Spinning vinyl animation for 1950s jukebox */
-@keyframes spin-slow {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.animate-spin-vinyl {
-  animation: spin-slow 4s linear infinite;
-}
 
 /* Custom Scrollbar for tab overflow on mobile */
 .no-scrollbar::-webkit-scrollbar {

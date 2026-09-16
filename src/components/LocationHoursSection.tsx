@@ -1,16 +1,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Clock, MapPin, Navigation, Car, Phone, Lightbulb, Compass, ExternalLink, Sparkles, CheckCircle2, Radio } from "lucide-react";
+import { Clock, MapPin, Navigation, Phone, Compass, ExternalLink, Sparkles, CheckCircle2, Utensils, ShoppingBag } from "lucide-react";
 import { DINER_INFO, getDinerStatus } from "@/data/dinerInfo";
 
 export default function LocationHoursSection() {
   const [currentDayIndex, setCurrentDayIndex] = useState<number>(1);
-  const [selectedStall, setSelectedStall] = useState<number | null>(7);
-  const [headlightsOn, setHeadlightsOn] = useState<boolean>(true);
   const [status, setStatus] = useState({
     isOpen: true,
-    statusText: "Open Today until 9:00 PM",
+    statusText: "Open Today until 7:30 PM",
   });
 
   useEffect(() => {
@@ -22,11 +20,6 @@ export default function LocationHoursSection() {
     });
   }, []);
 
-  const handleSelectStall = (stallNum: number) => {
-    setSelectedStall(stallNum);
-    setHeadlightsOn(true);
-  };
-
   return (
     <section id="location" className="py-16 sm:py-20 lg:py-24 bg-amber-50/40 border-b-4 border-stone-900 scroll-mt-24 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -34,14 +27,14 @@ export default function LocationHoursSection() {
         {/* 1950s Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
           <div className="inline-flex items-center gap-2 bg-amber-200 text-[#78350F] px-4 py-1.5 rounded-full text-xs sm:text-sm font-black uppercase tracking-widest mb-3 border-2 border-stone-900 shadow-[3px_3px_0px_0px_#1C1917]">
-            <Car className="w-4 h-4" />
-            ★ Augusta Drive-In Tradition Since 1956 ★
+            <Utensils className="w-4 h-4" />
+            ★ Augusta Drive-In &amp; Carryout Since 1956 ★
           </div>
           <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black font-serif tracking-tight text-stone-950">
-            Hours, Location &amp; Drive-In Dining
+            Hours &amp; Location
           </h2>
           <p className="mt-3 text-stone-800 font-medium text-base sm:text-lg">
-            Located right at 330 State Street in Augusta, Kansas. Pull up for quick counter carryout or enjoy your meal at our outdoor picnic benches under the Kansas sky!
+            Located at 330 State Street in Augusta, Kansas. Walk up to our counter window for fast carryout or enjoy lunch outside at our picnic benches!
           </p>
         </div>
 
@@ -108,15 +101,15 @@ export default function LocationHoursSection() {
               </div>
             </div>
 
-            {/* 1950s Drive-In Ordering Box Graphic */}
+            {/* Ordering Guide Card */}
             <div className="bg-[#1C1917] text-white rounded-2xl p-5 border-3 border-amber-400 shadow-[4px_4px_0px_0px_#DC2626]">
               <div className="flex items-start gap-3.5">
                 <div className="p-2.5 bg-amber-400 text-stone-950 rounded-xl shrink-0 mt-0.5 border border-stone-900">
-                  <Radio className="w-5 h-5 animate-pulse" />
+                  <ShoppingBag className="w-5 h-5" />
                 </div>
                 <div>
                   <h4 className="text-sm font-black text-amber-300 uppercase tracking-widest mb-1 flex items-center gap-2">
-                    <span>★ Authentic Drive-In Service ★</span>
+                    <span>★ Carryout &amp; Counter Dining ★</span>
                   </h4>
                   <p className="text-sm text-stone-200 leading-relaxed font-medium">
                     &ldquo;{DINER_INFO.orderingInstructions}&rdquo;
@@ -124,11 +117,15 @@ export default function LocationHoursSection() {
                   <div className="mt-3 flex flex-wrap items-center gap-3 text-xs text-stone-300 font-bold">
                     <span className="flex items-center gap-1">
                       <span className="w-2 h-2 rounded-full bg-emerald-400" />
-                      12 Drive-In Spots
+                      Walk-Up Window
                     </span>
                     <span className="flex items-center gap-1">
                       <span className="w-2 h-2 rounded-full bg-[#F59E0B]" />
-                      Carryout Counter Window
+                      Outdoor Picnic Benches
+                    </span>
+                    <span className="flex items-center gap-1">
+                      <span className="w-2 h-2 rounded-full bg-red-400" />
+                      Call-Ahead Pickup
                     </span>
                   </div>
                 </div>
@@ -148,7 +145,7 @@ export default function LocationHoursSection() {
                   </div>
                   <div>
                     <h3 className="text-2xl font-black text-stone-950 font-serif">
-                      Augusta, Kansas Spot
+                      330 State Street
                     </h3>
                     <p className="text-sm font-bold text-stone-700 mt-0.5">
                       {DINER_INFO.address}
@@ -160,7 +157,7 @@ export default function LocationHoursSection() {
               {/* 1950s Stylized Map Canvas */}
               <div className="relative rounded-2xl overflow-hidden border-3 border-stone-900 bg-amber-50 h-64 sm:h-72 mb-6 group">
                 <div className="absolute inset-0 bg-stone-200 paper-grid">
-                  {/* State Street strip */}
+                  {/* State Street Highway strip */}
                   <div className="absolute top-1/2 left-0 right-0 h-14 bg-stone-900 -translate-y-1/2 flex items-center justify-around border-y-3 border-amber-400">
                     <div className="w-10 h-1.5 bg-amber-400" />
                     <div className="w-10 h-1.5 bg-amber-400" />
@@ -171,10 +168,10 @@ export default function LocationHoursSection() {
                   {/* Diner Pin */}
                   <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 flex flex-col items-center">
                     <div className="w-12 h-12 rounded-full bg-[#DC2626] text-white flex items-center justify-center shadow-lg border-2 border-white animate-bounce">
-                      <Car className="w-6 h-6 text-amber-300" />
+                      <Utensils className="w-6 h-6 text-amber-300" />
                     </div>
                     <div className="mt-2 bg-[#1C1917] text-white font-black text-xs px-3.5 py-1 rounded-xl border-2 border-amber-400 shadow-md whitespace-nowrap">
-                      Miller&apos;s Drive In (Est. 1956)
+                      Miller&apos;s Five Drive-In &amp; Carry-Out
                     </div>
                   </div>
 
@@ -192,19 +189,19 @@ export default function LocationHoursSection() {
                   className="absolute inset-0 bg-stone-900/50 backdrop-blur-[1px] opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2 text-white font-black text-base z-20"
                 >
                   <Compass className="w-5 h-5 text-amber-400" />
-                  <span>Click for GPS Navigation (Augusta, KS)</span>
+                  <span>Open in Google Maps</span>
                   <ExternalLink className="w-4 h-4" />
                 </a>
               </div>
 
-              {/* Parking Directions */}
+              {/* Parking & Pickup Directions */}
               <div className="bg-amber-100/60 border-2 border-stone-900 rounded-xl p-4 mb-6 text-sm text-stone-800 space-y-1 shadow-[2px_2px_0px_0px_#1C1917]">
                 <div className="font-black text-stone-950 flex items-center gap-1.5">
                   <Navigation className="w-4 h-4 text-[#DC2626]" />
-                  State Street Drive-In &amp; Carryout:
+                  State Street Arrival &amp; Parking:
                 </div>
                 <p className="text-xs sm:text-sm text-stone-700 font-medium">
-                  Located right on State Street (US-54 / US-77 corridor) in Augusta, KS. Ample parking and outdoor picnic seating. Call ahead 10-15 minutes and your order will be bagged piping hot right off the grill!
+                  Located directly on State Street in Augusta, KS. Convenient parking right out front. Call ahead 10-15 minutes and your order will be bagged piping hot right off the grill!
                 </p>
               </div>
             </div>
@@ -235,66 +232,74 @@ export default function LocationHoursSection() {
 
         </div>
 
-        {/* 1950s 12-Stall Drive-In Guide */}
+        {/* Authentic Augusta Drive-In & Carryout Feature Highlights */}
         <div className="bg-[#FFFDF9] rounded-3xl border-4 border-stone-900 p-6 sm:p-8 shadow-[8px_8px_0px_0px_#1C1917]">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b-2 border-stone-900 mb-6">
             <div>
               <div className="inline-flex items-center gap-1.5 text-xs font-black uppercase text-[#92400E] bg-amber-200 px-3 py-1 rounded-full border border-stone-900 mb-1.5 shadow-[2px_2px_0px_0px_#1C1917]">
                 <Sparkles className="w-3.5 h-3.5" />
-                Drive-In Car &amp; Carryout Guide
+                How To Order At Miller&apos;s
               </div>
               <h3 className="text-2xl sm:text-3xl font-black font-serif text-stone-950">
-                12 Drive-In Parking Stalls &amp; Picnic Dining
+                Fresh Carryout &amp; Outdoor Picnic Dining
               </h3>
               <p className="text-xs sm:text-sm text-stone-700 font-bold mt-0.5">
-                Pull into any stall along State Street or walk right up to the window for fast carryout.
+                Quick, friendly hometown service on State Street in Augusta.
               </p>
             </div>
 
-            {selectedStall && (
-              <div className="flex items-center gap-3 bg-[#1C1917] text-white px-4 py-2.5 rounded-2xl border-2 border-amber-400 shadow-[3px_3px_0px_0px_#DC2626]">
-                <div className={`w-3.5 h-3.5 rounded-full ${headlightsOn ? "bg-amber-400 shadow-[0_0_12px_#F59E0B] animate-pulse" : "bg-stone-600"}`} />
-                <div className="text-xs sm:text-sm">
-                  <span className="font-mono font-black text-amber-400">Stall #{selectedStall}</span>
-                  <span className="text-stone-300 ml-1.5 font-bold">• Ready for Dining</span>
-                </div>
-                <a
-                  href={DINER_INFO.phoneTel}
-                  className="tap-target ml-2 px-3 py-1.5 bg-[#DC2626] text-white font-black text-xs uppercase rounded-xl border border-white"
-                >
-                  Order to Stall #{selectedStall}
-                </a>
-              </div>
-            )}
+            <a
+              href={DINER_INFO.phoneTel}
+              className="tap-target px-5 py-3 bg-[#DC2626] hover:bg-[#B91C1C] text-white font-black text-sm uppercase rounded-2xl border-2 border-stone-900 shadow-[3px_3px_0px_0px_#1C1917] flex items-center gap-2"
+            >
+              <Phone className="w-4 h-4 text-amber-300" />
+              <span>Call ({DINER_INFO.phoneDisplay})</span>
+            </a>
           </div>
 
-          {/* 12 Stall Buttons Grid with 1950s Car Styling */}
-          <div className="grid grid-cols-3 sm:grid-cols-6 gap-3 mb-6">
-            {Array.from({ length: 12 }, (_, i) => i + 1).map((stallNum) => {
-              const isSelected = selectedStall === stallNum;
-              return (
-                <button
-                  key={stallNum}
-                  type="button"
-                  onClick={() => handleSelectStall(stallNum)}
-                  className={`tap-target py-3 px-2 rounded-2xl font-mono text-center flex flex-col items-center justify-center transition-all border-3 cursor-pointer ${
-                    isSelected
-                      ? "bg-[#1C1917] text-amber-400 border-amber-400 shadow-[4px_4px_0px_0px_#DC2626] scale-105"
-                      : "bg-white hover:bg-amber-50 text-stone-900 border-stone-900 shadow-[2px_2px_0px_0px_#1C1917]"
-                  }`}
-                >
-                  <Car className={`w-5 h-5 mb-1 ${isSelected ? "text-amber-400 animate-bounce" : "text-stone-500"}`} />
-                  <span className="text-xs font-black">Stall {stallNum}</span>
-                </button>
-              );
-            })}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+            <div className="bg-white p-5 rounded-2xl border-2 border-stone-900 shadow-[3px_3px_0px_0px_#1C1917]">
+              <div className="w-10 h-10 rounded-xl bg-red-100 text-[#DC2626] flex items-center justify-center font-black font-serif text-lg mb-3 border border-red-300">
+                1
+              </div>
+              <h4 className="font-black text-stone-950 text-base font-serif mb-1">
+                Walk Up to the Counter
+              </h4>
+              <p className="text-xs sm:text-sm text-stone-600 font-medium">
+                Park in front of our State Street location and walk right up to the window to place your fresh order.
+              </p>
+            </div>
+
+            <div className="bg-white p-5 rounded-2xl border-2 border-stone-900 shadow-[3px_3px_0px_0px_#1C1917]">
+              <div className="w-10 h-10 rounded-xl bg-amber-100 text-[#D97706] flex items-center justify-center font-black font-serif text-lg mb-3 border border-amber-300">
+                2
+              </div>
+              <h4 className="font-black text-stone-950 text-base font-serif mb-1">
+                Call Ahead for Carryout
+              </h4>
+              <p className="text-xs sm:text-sm text-stone-600 font-medium">
+                Call 10 to 15 minutes before you arrive. We&apos;ll have your smashed burgers and shakes hot and ready for fast pickup.
+              </p>
+            </div>
+
+            <div className="bg-white p-5 rounded-2xl border-2 border-stone-900 shadow-[3px_3px_0px_0px_#1C1917]">
+              <div className="w-10 h-10 rounded-xl bg-stone-100 text-stone-900 flex items-center justify-center font-black font-serif text-lg mb-3 border border-stone-300">
+                3
+              </div>
+              <h4 className="font-black text-stone-950 text-base font-serif mb-1">
+                Picnic Bench Dining
+              </h4>
+              <p className="text-xs sm:text-sm text-stone-600 font-medium">
+                Take your food to-go, or sit down and eat at our outdoor picnic benches under the Kansas sky.
+              </p>
+            </div>
           </div>
 
           <div className="p-4 bg-amber-100 border-2 border-stone-900 rounded-2xl flex items-center justify-between text-xs sm:text-sm text-stone-900 font-bold shadow-[2px_2px_0px_0px_#1C1917]">
             <div className="flex items-center gap-2">
               <CheckCircle2 className="w-5 h-5 text-emerald-700 shrink-0" />
               <span>
-                Enjoy picnic bench outdoor dining, drive-in parking, and quick walk-up window carryout.
+                Freshly cooked to order, hot crinkle fries, and thick hand-spun malts.
               </span>
             </div>
             <span className="font-black uppercase text-[#DC2626] hidden sm:inline">

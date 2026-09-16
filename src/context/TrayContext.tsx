@@ -30,7 +30,7 @@ const TrayContext = createContext<TrayContextType | undefined>(undefined);
 export function TrayProvider({ children }: { children: React.ReactNode }) {
   const [items, setItems] = useState<TrayItem[]>([]);
   const [isTrayOpen, setIsTrayOpen] = useState(false);
-  const [selectedStall, setSelectedStall] = useState("Car-Hop Stall #7");
+  const [selectedStall, setSelectedStall] = useState("Carryout Pickup");
 
   // Load saved tray from localStorage if available
   useEffect(() => {

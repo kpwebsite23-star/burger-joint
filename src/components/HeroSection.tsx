@@ -38,7 +38,7 @@ export default function HeroSection() {
 
             {/* Subhead with 50s Diner Lore */}
             <p className="text-lg sm:text-xl text-stone-800 font-medium leading-relaxed mb-8 max-w-2xl">
-              Made fresh to order, served car-hop style or ready for quick pickup. Savor the authentic 1950s taste of thin-pressed Midwestern Angus beef seared with lace-crisp edges on a 450°F seasoned cast-iron flat top.
+              Made fresh to order, ready for quick window carryout or outdoor picnic dining. Savor the authentic 1950s taste of thin-pressed Midwestern Angus beef seared with lace-crisp edges on a 450°F seasoned cast-iron flat top.
             </p>
 
             {/* Quick Action Button Group */}

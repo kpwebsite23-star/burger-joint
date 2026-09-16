@@ -5,7 +5,7 @@ export interface MenuItem {
   price: string;
   rawPrice: number;
   description: string;
-  badge?: "Customer Favorite" | "House Specialty" | "Car-Hop Classic" | "Best Seller" | "Staff Pick";
+  badge?: "Customer Favorite" | "House Specialty" | "Drive-In Classic" | "Best Seller" | "Staff Pick";
   calories?: string;
   details?: string[];
   popular?: boolean;
@@ -78,7 +78,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: "combo-tender-basket-meal",
-    name: "Car-Hop Classic Tender Meal",
+    name: "Drive-In Classic Tender Meal",
     category: "combos",
     price: "$12.25",
     rawPrice: 12.25,
@@ -95,7 +95,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: "$10.75",
     rawPrice: 10.75,
     description: "Two all-beef natural casing franks smothered in slow-simmered Coney meat chili, melted cheddar, and diced yellow onions with fries.",
-    badge: "Car-Hop Classic",
+    badge: "Drive-In Classic",
     calories: "920 cal",
     details: ["Natural casing franks", "Secret chili recipe", "Diced onions", "Side of fries"],
   },
@@ -155,7 +155,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: "$4.95",
     rawPrice: 4.95,
     description: "Grilled quarter-pound all-beef frank topped with slow-simmered hearty drive-in chili, shredded cheddar, and spicy brown mustard.",
-    badge: "Car-Hop Classic",
+    badge: "Drive-In Classic",
     calories: "450 cal",
     details: ["Quarter-pound frank", "Homemade chili", "Sharp cheddar"],
   },
@@ -204,7 +204,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: "$5.85",
     rawPrice: 5.85,
     description: "Golden crispy tater tots smothered with our secret-recipe beef chili, melted cheddar, crisp bacon bits, pickled jalapeños, and sour cream.",
-    badge: "Car-Hop Classic",
+    badge: "Drive-In Classic",
     calories: "660 cal",
     details: ["Crispy potato tots", "Homemade beef chili", "Real bacon bits & jalapeños"],
   },
@@ -240,7 +240,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: "$5.45",
     rawPrice: 5.45,
     description: "Spun thick in our classic vintage Hamilton Beach spindle. Rich chocolate cream, malt powder, crowned with whipped cream & maraschino cherry.",
-    badge: "Car-Hop Classic",
+    badge: "Drive-In Classic",
     calories: "690 cal",
     details: ["Hand-spun", "Vintage malt spindle", "Whipped cream & cherry"],
     popular: true,
@@ -274,7 +274,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: "$4.65",
     rawPrice: 4.65,
     description: "Classic 1950s style float: craft draft root beer bubbling over two huge scoops of premium frozen vanilla custard.",
-    badge: "Car-Hop Classic",
+    badge: "Drive-In Classic",
     calories: "380 cal",
     details: ["Craft draft root beer", "Two vanilla custard scoops", "Foamy head"],
   },

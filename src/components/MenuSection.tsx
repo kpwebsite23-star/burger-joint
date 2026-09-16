@@ -315,7 +315,7 @@ export default function MenuSection() {
           <div>
             <div className="inline-flex items-center gap-2 text-[#F59E0B] text-xs font-black uppercase tracking-widest mb-2">
               <Star className="w-4 h-4 fill-current" />
-              1950s Car-Hop Tray Service &amp; Pickup Window
+              1950s Drive-In &amp; Carryout Pickup Window
             </div>
             <h3 className="text-2xl sm:text-3xl font-black font-serif text-white">
               Special Customization or Secret Order?
@@ -330,7 +330,7 @@ export default function MenuSection() {
             className="tap-target shrink-0 px-6 py-3.5 bg-[#DC2626] hover:bg-[#B91C1C] text-white font-black text-sm sm:text-base uppercase tracking-wider rounded-2xl flex items-center gap-2.5 shadow-[4px_4px_0px_0px_#1C1917] border-2 border-white active:scale-95 transition-all"
           >
             <Phone className="w-5 h-5 text-amber-300" />
-            <span>Call Car-Hop ({DINER_INFO.phoneDisplay})</span>
+            <span>Call In Order ({DINER_INFO.phoneDisplay})</span>
           </a>
         </div>
 

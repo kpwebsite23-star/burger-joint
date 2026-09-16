@@ -19,8 +19,8 @@ export interface Testimonial {
 }
 
 export const DINER_INFO = {
-  name: "Miller's Drive In",
-  shortName: "Miller's",
+  name: "Miller's Five Drive-In & Carry-Out",
+  shortName: "Miller's Five",
   tagline: "Classic Flat-Top Burgers, Crinkle-Cut Fries & Hand-Spun Malts.",
   subhead: "Serving Augusta with authentic 1950s drive-in flavor and friendly carry-out since 1956.",
   badge: "Est. 1956 • Augusta, KS",
@@ -28,11 +28,10 @@ export const DINER_INFO = {
   familySinceYear: "1964",
   phoneDisplay: "(316) 775-9989",
   phoneTel: "tel:3167759989",
-  address: "330 State Street, Augusta, KS 67010",
-  mapsUrl: "https://www.google.com/maps/search/?api=1&query=Miller%27s+Drive+In+330+State+St+Augusta+KS+67010",
-  googleReviewsUrl: "https://www.google.com/maps/search/?api=1&query=Miller%27s+Drive+In+330+State+St+Augusta+KS+67010",
-  totalStalls: 12,
-  orderingInstructions: "Call ahead for window carryout or pull up for friendly counter service and picnic bench dining.",
+  address: "330 State St, Augusta, KS 67010",
+  mapsUrl: "https://www.google.com/maps/place/Miller's+Five+Drive-In+%26+Carry-Out,+330+State+St,+Augusta,+KS+67010/@37.674734,-96.978721,17z/data=!4m6!3m5!1s0x87ba516f22d766c9:0xff1a207779e0bd5c!8m2!3d37.674734!4d-96.978721!16s%2Fg%2F1th28xzl?hl=en-us&source=lnms&g_ep=Eg1tbF8yMDI2MDkxM18wIOC7DCoASAJQAg%3D%3D",
+  googleReviewsUrl: "https://www.google.com/maps/place/Miller's+Five+Drive-In+%26+Carry-Out,+330+State+St,+Augusta,+KS+67010/@37.674734,-96.978721,17z/data=!4m6!3m5!1s0x87ba516f22d766c9:0xff1a207779e0bd5c!8m2!3d37.674734!4d-96.978721!16s%2Fg%2F1th28xzl?hl=en-us&source=lnms&g_ep=Eg1tbF8yMDI2MDkxM18wIOC7DCoASAJQAg%3D%3D",
+  orderingInstructions: "Call ahead for window carryout or walk right up for friendly counter service and picnic bench dining.",
   weeklyHours: [
     { day: "Sunday", dayIndex: 0, isOpenDay: false, openTime: "Closed", closeTime: "Closed", openHour24: 0, closeHour24: 0 },
     { day: "Monday", dayIndex: 1, isOpenDay: false, openTime: "Closed", closeTime: "Closed", openHour24: 0, closeHour24: 0 },
@@ -45,11 +44,11 @@ export const DINER_INFO = {
   trustBadges: [
     { label: "100% Fresh Beef", detail: "Never frozen, flat-top smashed to order" },
     { label: "Hand-Spun Real Ice Cream", detail: "Creamy whole dairy shakes & malts" },
-    { label: "Carryout & Car Dining", detail: "Quick pickup window & State St benches" },
+    { label: "Carryout & Picnic Dining", detail: "Quick pickup window & State St benches" },
   ],
   communityStory: {
     title: "Over 6 Decades of Augusta Drive-In Tradition",
-    p1: "Located right on State Street in Augusta, Kansas, Miller's Drive In has been a local cornerstone since 1956 and owned and operated by the Miller family since 1964. Generations of families, locals, and Mobil refinery workers have gathered here for classic flat-top smash burgers with lace-crisp edges, golden crinkle fries, and frosty fountain treats.",
+    p1: "Located right on State Street in Augusta, Kansas, Miller's Five Drive-In & Carry-Out has been a local cornerstone since 1956 and owned and operated by the Miller family since 1964. Generations of families, locals, and Mobil refinery workers have gathered here for classic flat-top smash burgers with lace-crisp edges, golden crinkle fries, and frosty fountain treats.",
     p2: "Everything is cooked fresh when you order it. Whether you're calling ahead for quick carryout on your way home or enjoying lunch under the Kansas sun, you'll always find friendly hometown service and authentic 1950s roadside diner flavor.",
     stats: [
       { value: "60+", label: "Years in Augusta" },

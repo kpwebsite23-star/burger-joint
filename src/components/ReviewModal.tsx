@@ -74,7 +74,7 @@ export default function ReviewModal({ onAddReview }: ReviewModalProps) {
                     <Heart className="w-6 h-6 fill-current" />
                   </div>
                   <h3 className="text-xl font-black font-serif text-stone-950">
-                    Share Your Car-Hop Experience
+                    Share Your Miller&apos;s Five Experience
                   </h3>
                   <p className="text-xs text-stone-500">
                     Help fellow drivers discover your favorite smashed burgers &amp; malts!
@@ -159,7 +159,7 @@ export default function ReviewModal({ onAddReview }: ReviewModalProps) {
                     rows={3}
                     value={quote}
                     onChange={(e) => setQuote(e.target.value)}
-                    placeholder="What did you love about the smashed burgers, fries, or car-hop service?"
+                    placeholder="What did you love about the smashed burgers, fries, or drive-in service?"
                     className="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-300 rounded-xl text-sm text-stone-900 outline-none focus:border-[#DC2626]"
                   />
                 </div>
